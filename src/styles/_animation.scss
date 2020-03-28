@@ -1,0 +1,54 @@
+/*
+|--------------------------------------------------------------------------
+|   Animation Keyframes
+|--------------------------------------------------------------------------
+|
+|	Classnames are added to the #content element to indicate keyframes in
+|	the animation. The classnames for keyframes will follow this structure:
+|		.queue1
+|		.queue2
+|		.queue3
+|		... and so on.
+|
+|	The keyframes are stored in the 'ad.keyframes' meta tag in the
+|	index.html file separated by commas. This meta tag can contain an
+|	infinite number of keyframes.
+|
+|	As a keyframe classname is added to the DOM, it will allow you to trigger
+|	CSS animations for any element on the canvas.
+|
+|	For example:
+|	If you want the first frame to fade out on .queue2, then create the
+|	following css selector:
+|		.queue1 .frame1 {opacity: 0!important;}
+|
+|	It's important to note that the initial selector for all elements loaded
+|	onto the DOM must have a transition property, or else you won't see
+|	a transition.
+|
+*/
+
+.queue1 {
+	.frame1 {
+		opacity: 1 !important;
+	}
+}
+
+.queue2 {
+	.frame1 {
+		opacity: 0 !important;
+	}
+}
+
+
+.queue3 {
+	.frame2 {
+		opacity: 0 !important;
+	}
+}
+
+.queue4 {
+	.frame3 {
+		opacity: 0 !important;
+	}
+}

@@ -1,0 +1,143 @@
+/*
+|--------------------------------------------------------------------------
+|   ISI Styles
+|--------------------------------------------------------------------------
+|
+|   ISI styles and states (ie: expanded, default)
+|
+*/
+
+@import '_variables';
+
+#legal {
+
+  position: absolute;
+  transition: all 500ms $easing;
+  z-index: 100;
+  width: 100%;
+  cursor: auto;
+
+  .header, .footer {
+    font-size: 7.5px;
+    padding: 0px 10px;
+    background: $isi-label-color;
+    line-height: 18px;
+  }
+
+  .header {
+
+    .expand {
+      cursor: pointer;
+      position: absolute;
+      right: 5px;
+
+      &:before {
+        border-color: $isi-expand-icon-color;
+        border-style: solid;
+        border-width: 0.25em 0.25em 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        left: 0.15em;
+        position: relative;
+        top: 0.15em;
+        transform: rotate(-45deg);
+        width: 0.45em;        
+      }
+
+    }
+
+  }
+
+  #isi {
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color; 
+    font-size: 10px;
+    z-index: 100;
+    background: #fff;
+    height: calc(100% - 35px);
+
+    .isi-wrapper {
+      padding: 5px 10px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $scrollbar-track-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbar-thumb-color;
+      border-radius: 0px;
+    }
+
+    a {
+      color: $isi-link-color;
+    }
+
+    ul {
+      margin: 5px 0;
+      padding: 0 0 0 20px;
+
+      li {
+
+      }
+
+    }
+
+  }
+
+  .footer {
+
+    a {
+      color: #666;
+    }
+
+  }
+
+}
+
+
+
+/* Expanded ISI to full screen */
+
+.isi-expand {
+
+  #legal {
+    height: 100% !important;
+    width: 100% !important;
+
+    .header {
+      .expand {
+        &:before {
+          top: 0;
+          transform: rotate(135deg);        
+        }
+      }
+    }
+  }
+
+  &.w468.h60,
+  &.w728.h90,
+  &.w970.h90 {
+
+    #legal {
+      .header {
+        .expand {
+          &:before {
+            top: 2px;
+            left: 0;
+            transform: rotate(45deg);         
+          }
+        }
+      }      
+    }
+    
+  }
+
+}

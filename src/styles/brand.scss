@@ -1,0 +1,57 @@
+/*
+|--------------------------------------------------------------------------
+|   Brand styles
+|--------------------------------------------------------------------------
+|
+|   Brand specific styles to override the default values set in _general.scss
+|
+*/
+
+@import '_variables';
+
+#content {
+
+	.frames {
+
+		.frame {
+
+		}
+	}
+
+	#legal {
+
+		.header {
+
+			.expand {
+
+				&:before {
+
+				}
+
+			}
+		}
+
+		#isi {
+
+			.isi-wrapper {
+
+				p {
+
+				}
+
+				ul {
+
+					li {
+
+					}
+				}
+
+			}
+		}
+
+		.footer {
+
+		}
+	}
+
+}
