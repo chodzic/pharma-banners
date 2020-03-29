@@ -12,19 +12,20 @@
 #legal {
 
   position: absolute;
-  transition: all 500ms $easing;
+  transition: all $ani-duration $easing;
   z-index: 100;
   width: 100%;
-  cursor: auto;
 
   .header, .footer {
-    font-size: 7.5px;
+    font-size: $legal-font-size;
     padding: 0px 10px;
-    background: $isi-label-color;
-    line-height: 18px;
+    line-height: $legal-label-height;
   }
 
   .header {
+
+    background: $legal-header-bgcolor;
+    color: $legal-header-color;
 
     .expand {
       cursor: pointer;
@@ -49,15 +50,26 @@
 
   }
 
+  .footer {
+
+    background: $legal-footer-bgcolor;
+    color: $legal-footer-color;
+  
+      a {
+        color: $legal-footer-color;
+      }
+  
+  }
+
   #isi {
 
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color; 
-    font-size: 10px;
+    font-size: $isi-font-size;
     z-index: 100;
     background: #fff;
-    height: calc(100% - 35px);
+    height: calc(100% - #{$legal-label-height} - #{$legal-label-height} + 1px);
 
     .isi-wrapper {
       padding: 5px 10px;
@@ -88,14 +100,6 @@
 
       }
 
-    }
-
-  }
-
-  .footer {
-
-    a {
-      color: #666;
     }
 
   }
@@ -140,4 +144,24 @@
     
   }
 
+}
+
+
+/* Conditional stylings based on elements on the canvas */
+
+.no-legal-header, .no-legal-footer {
+  #legal {
+    #isi {
+      height: calc(100% - #{$legal-label-height} + 1px);
+    }
+  }
+}
+
+
+.no-legal-header.no-legal-footer {
+  #legal {
+    #isi{
+      height: 100%;
+    }
+  }
 }

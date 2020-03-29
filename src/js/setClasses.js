@@ -3,8 +3,21 @@
 |   Set Classes & Values
 |--------------------------------------------------------------------------
 |
-|	Detect and set classnames and values of elements.
+|	Detect and set classnames to the parent container. These class names
+|	will be used to conditionally style the banner.
 |
+*/
+
+el_content = document.getElementById("content");
+el_legal = document.getElementById("legal");
+el_legal_header = document.querySelector("#legal .header");
+el_legal_footer = document.querySelector("#legal .footer");
+el_isi = document.getElementById("isi");
+el_isi_expand = document.querySelector("#legal .header .expand");
+
+
+
+/*
 | 	The width and height of banners will be set by the ad.size meta tag found
 |	in the index.html file. Two class names will be added to the #content
 |	element to represent the width and height of the banner. The classnames 
@@ -22,7 +35,6 @@
 var ad_size = document.querySelector('meta[name="ad.size"]').content.split(",");
 var ad_width = ad_size[0].split("=")[1];
 var ad_height = ad_size[1].split("=")[1];
-el_content = document.getElementById("content");
 el_content.classList.add("w" + ad_width);
 el_content.classList.add("h" + ad_height);
 
@@ -30,3 +42,36 @@ el_content.classList.add("h" + ad_height);
 /*  Sets the overall width and height of the banner based on the meta data value. */
 el_content.style.height = ad_height + "px";
 el_content.style.width = ad_width + "px";
+
+
+
+// If an ISI is detected, then give the parent container a classname of .has-isi
+if (el_isi) {
+	el_content.classList.add("has-isi");
+} else {
+	el_content.classList.add("no-isi");
+}
+
+
+// if the legal header is detected, then give the parent container a classname of .has-legal-header
+if (el_legal_header) {
+	el_content.classList.add("has-legal-header");
+} else {
+	el_content.classList.add("no-legal-header");
+}
+
+
+// if the legal footer is detected, then give the parent container a classname of .has-legal-footer
+if (el_legal_footer) {
+	el_content.classList.add("has-legal-footer");
+} else {
+	el_content.classList.add("no-legal-footer");
+}
+
+
+// if the ISI expander is detected, then give the parent container a classname of .has-isi-expand
+if (el_isi_expand) {
+	el_content.classList.add("has-isi-expand");
+} else {
+	el_content.classList.add("no-isi-expand");
+}

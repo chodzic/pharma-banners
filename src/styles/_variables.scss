@@ -13,17 +13,26 @@ $border-color: #000;
 $body-font: Arial;
 
 
-/* ISI & Scrollbar Variables */
-$scrollbar-track-color: #eee;
-$scrollbar-thumb-color: #999;
-$isi-label-color: #eee;
+/* Legal Variables */
+$legal-header-bgcolor: #eee;
+$legal-header-color: #333;
+$legal-footer-bgcolor: #eee;
+$legal-footer-color: #333;
+$legal-font-size: 7.5px;
+$legal-label-height: 18px;
+
+
+/* ISI */
 $isi-expand-icon-color: #555;
 $isi-font: Arial;
+$isi-font-size: 10px;
 $isi-size: 33.3%;
-
-
-/* Text colors */
 $isi-link-color: #000;
+
+
+/* ISI Scrollbar Variables */
+$scrollbar-track-color: #eee;
+$scrollbar-thumb-color: #999;
 
 
 /* Easing & Animation */
