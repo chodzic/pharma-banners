@@ -8,11 +8,13 @@
 |
 */
 
+@import '_variables';
+
 
 body,p {
   padding: 0;
   margin: 0;
-  font-family: Arial;
+  font-family: $body-font;
 }
 
 
@@ -20,7 +22,7 @@ body,p {
 
 #content {
 
-  border: 1px solid #000;
+  border: 1px solid $border-color;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -36,27 +38,23 @@ body,p {
       position: absolute;
       width: 100%;
       height: 100%;
-      transition: opacity 500ms ease-out;
+      transition: opacity $ani-duration ease-out;
     }
 
     .frame1 {
       opacity: 1;
-      background: red;
       z-index: 20;
     }
 
     .frame2 {
-      background: blue;
       z-index: 18;
     }
 
     .frame3 {
-      background: green;
       z-index: 16;
     }
 
     .frame4 {
-      background: purple;
       z-index: 14;
     }
 
@@ -75,29 +73,29 @@ body,p {
 .w336.h280 {
 
   .frames {
-    height: 66.6%  !important;
+    height: calc(100% - $isi-size)  !important;
   }
 
   #legal {
-    height: 33.3%;
+    height: $isi-size;
     bottom: 0px !important;
+    font-family: $isi-font;
   }
 
 }
 
 
 /* Horizontal sizes */
-
 .w468.h60,
 .w728.h90,
 .w970.h90 {
 
   .frames {
-    width: 66.6% !important;
+    width: calc(100% - $isi-size) !important;
   }
 
   #legal {
-    width: 33.3%;
+    width: $isi-size;
     right: 0px !important;
     height: 100%;
 

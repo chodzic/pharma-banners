@@ -8,15 +8,24 @@
 */
 
 
+/* General variables */
+$border-color: #000;
+$body-font: Arial;
+
 
 /* ISI & Scrollbar Variables */
 $scrollbar-track-color: #eee;
 $scrollbar-thumb-color: #999;
 $isi-label-color: #eee;
 $isi-expand-icon-color: #555;
+$isi-font: Arial;
+$isi-size: 33.3%;
+
 
 /* Text colors */
 $isi-link-color: #000;
 
-/* Easing */
+
+/* Easing & Animation */
 $easing: cubic-bezier(0.22, 1, 0.36, 1);
+$ani-duration: 500ms;

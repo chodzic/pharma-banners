@@ -1,10 +1,14 @@
 /*
 |--------------------------------------------------------------------------
-| Animation Queue
+| 	Animation Queue
 |--------------------------------------------------------------------------
 |
+|	Keyframes are stored in the ad.keyframes meta tag in the index.html
+|	file. An intervdal is created for each keyframe. An incrementing
+|	classname is appended to the #content element. The classnames are used
+| 	to trigger CSS animations.
+|
 */
-
 
 var ad_keyframes = document.querySelector('meta[name="ad.keyframes"]').content.split(",");
 

@@ -5,22 +5,18 @@
 |
 |	Detect and set classnames and values of elements.
 |
-*/
-
-
-
-/*  The width and height of banners will be set by the ad.size meta tag found
-	in the index.html file. Two class names will be added to the #content
-	element to represent the width and height of the banner. The classnames 
-	will follow this naming structure:
-		h[val] and w[val]
-
-	Example for a 300x250 banner:
-		.w300 .h250
-
-	Use those classnames to target specific banner sizes and style elements
-	within those sizes appropriately.
-
+| 	The width and height of banners will be set by the ad.size meta tag found
+|	in the index.html file. Two class names will be added to the #content
+|	element to represent the width and height of the banner. The classnames 
+|	will follow this naming structure:
+|		h[val] and w[val]
+|
+|	Example for a 300x250 banner:
+|		.w300 .h250
+|
+|	Use those classnames to target specific banner sizes and style elements
+|	within those sizes appropriately.
+|
 */
 
 var ad_size = document.querySelector('meta[name="ad.size"]').content.split(",");

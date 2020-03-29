@@ -3,9 +3,9 @@
 |   Expand ISI
 |--------------------------------------------------------------------------
 |
-|	Allow the user to expand the ISI to take up 100% of the canvas by 
-|	clicking an element. While expanded, the user can restore the ISI
-| 	to it's initial height.
+|	Allow the user to expand the ISI to take up 100% of the canvas by
+| 	clicking any element with an .expand class. While expanded, the user 
+|	can restore the ISI to it's initial height.
 |
 */
 
