@@ -1,6 +1,9 @@
 # README #
 
-Create quick pharma HTML display ads quickly with ISI styles and functionality pre-built into a light, easy-to-use template. No dependencies required. Production assets (before content) compile at only 6.2k. It is encouraged to use CSS animations for these banners. No javascript is required. Javascript is only used to 1) listen for keyframes (by adding classes to the parent container) and 2) manage the ISI logic (ie: does it auto-scroll? for how long? at what speed? is there a delay? and so on).
+Create pharma HTML display ads quickly along with ISI styles and functionality pre-built into a light, easy-to-use template. No dependencies required. Production assets (before content) compile at a light 7k. It is encouraged that you use CSS transitions / animations for these banners. No javascript is required. Javascript is only used to 
+
+1. listen for keyframes (which you will set in html) 
+2. manage the ISI logic (ie: does it auto-scroll? for how long? at what speed? is there a delay? and so on).
 
 
 ### STEP 1: Preparing the canvas ###
@@ -18,9 +21,9 @@ Adjust those values to the actual dimensions of your banner. The template will r
 .h250
 ```
 
-These classes are used to manage ISI positioning. For example: ISIs for 300x250 banners typically appear at the bottom of the banner. On 728x90 sizes, the ISIs are typically on the right.
+These classes are used to manage ISI positioning. For example: ISIs for 300x250 banners typically appear at the bottom of the banner. On 728x90 sizes, the ISIs are typically on the right. This allows the template to dynamically identify the size of the banner through CSS by listening for a class combination of, say, .w300.h250.
 
-The following sizes are pre-built within the banner.
+The following sizes are pre-built within the template.
 
 * 200x200
 * 250x250
@@ -36,7 +39,7 @@ The following sizes are pre-built within the banner.
 
 ### STEP 2: Animation keyframes ###
 
-Animations are encouraged to be handled entirely through CSS transitions. Keyframes are used to trigger these animations. To trigger these animation, class names are dynamically added to the parent container at specific keyframes. Keyframe durations are stored in the ad.keyframe meta data in the index.html file.
+Animations are encouraged to be handled entirely through CSS transitions. Keyframes are used to trigger these animations. To trigger these animation, class names are dynamically added to the parent container at specific durations. Keyframe durations are stored in the ad.keyframe meta data in the index.html file.
 
 ```html
 <meta name="ad.keyframes" content="4000,8000,12000">
@@ -49,16 +52,16 @@ You can now target all elements in the banner to animate at any of those keyfram
 
 ### STEP 3: Configure the ISI (Optional) ###
 
-An ISI container and functionality is pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the variables.scss file. For horizontal banners (ie: 728x90), the ISI appears on the right side of the canvas. For vertical or square banners (ie: 300x250), the ISI appears at the bottom.
+The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the variables.scss file. For horizontal banners (ie: 728x90), the ISI appears on the right side of the canvas. For vertical or square banners (ie: 300x250), the ISI appears at the bottom. This logic is pre-set within the template and wouldn't need to be adjusted.
 
 #### Auto-scroll Functionality ####
 
-The ISI has pre-built functionality: 
+The ISI has pre-built auto-scroll functionality: 
 
 * *Auto scroll* - The ISI will autoscroll on load.
-* *Scroll speed* - The speed of the autoscroll.
-* *Scroll delay* - Delaying the autoscroll.
-* *Scroll hard stop* - Stopping the autoscroll.
+* *Auto scroll speed* - The speed of the autoscroll determined by pixels per second.
+* *Auto scroll delay* - Delaying the autoscroll on load.
+* *Auto scroll hard stop* - Stopping the autoscroll at a specific duration.
 
 You can adjust these values by adding the following data attributes to the ISI element.
 
@@ -66,14 +69,14 @@ You can adjust these values by adding the following data attributes to the ISI e
 <div id="isi" data-autoscroll="true" data-autoscrollspeed="10" data-autoscrolldelay="1000" data-autoscrollstop="15000">
 ```
 
-* data-autoscroll = Give this attribute a value of 'true' to trigger the autoscroll functionality.
-* data-autoscrollspeed = Represents the number of pixels the ISI will scroll per second. IE: a value of 10 will autoscroll the ISI 10 pixels per seconds. Adjust this value to meet your requirements.
-* data-autoscrolldelay = Delay the start of the autoscroll by X milliseconds.
-* data-autoscrollstop = Force the ISI to stop scrolling after X milliseconds.
+* *data-autoscroll* = Give this attribute a value of 'true' to trigger the autoscroll functionality.
+* *data-autoscrollspeed* = Represents the number of pixels the ISI will scroll per second. IE: a value of 10 will autoscroll the ISI 10 pixels per seconds. Adjust this value to meet your requirements.
+* *data-autoscrolldelay* = Delay the start of the autoscroll by X milliseconds.
+* *data-autoscrollstop* = Force the ISI to stop scrolling after X milliseconds.
 
 To remove the auto-scroll functionality, simply remove the data attributes from the ISI element.
 
-It's important to note that the ISI will stop scrolling once the user engages with the banner (ie: click, manual scroll of the ISI). The ISI will pause scrolling if the user mouses over the ISI. On mouse out, the ISI will continue scrolling.
+It's important to note that the ISI will stop scrolling once the user engages with the banner (ie: click, manual scroll of the ISI, and so on). The ISI will pause scrolling if the user mouses over the ISI. On mouse out, the ISI will continue scrolling.
 
 #### Expand ISI ####
 
@@ -95,10 +98,10 @@ The animation methodology for this template is built entirely on CSS transitions
 
 The steps to animate an element are:
 
-1. Adjust the ad.keyframes meta tag in the *index.html* to add animation keyframes.
-1. Create the element in the *index.html*.
+1. Adjust the ad.keyframes meta tag in the *index.html* to add animation keyframe durations.
+1. Create the element you wish to animate in the *index.html*.
 1. Style the element in the *brand.scss* file.
-1. Target the element using the keyframe in the *animation.scss* file
+1. Target the element using the keyframe in the *animation.scss* file to change the element property, thus animating the element.
 
 That's it!
 
@@ -111,7 +114,7 @@ In the following example, once the first keyframe is triggered, we are hiding th
 
 ```
 
-Use this structure to animate all elements using the .queue# keyframe classes in the *animation.scss* file.
+Use this structure to animate all elements using the .queue[#] keyframe classes in the *animation.scss* file.
 
 
 ### BONUS: Shortcuts ###
