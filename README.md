@@ -42,20 +42,20 @@ Animations are encouraged to be handled entirely through CSS transitions. Keyfra
 <meta name="ad.keyframes" content="4000,8000,12000">
 ```
 
-The meta tag above contains three keyframes separated by commas. At 4000 milliseconds (or, 4 seconds), the classname 'queue1' will be added to the parent container. At 8 seconds, 'queue2' will be added to the parent container. At 12 seconds, the final class name 'queue3' will be added.
+The meta tag above contains three keyframes separated by commas. At 4000 milliseconds (or, 4 seconds), the classname 'queue1' will be added to the parent container. At 8 seconds, 'queue2' will be added to the parent container. At 12 seconds, the final class name 'queue3' will be added. Using the example above, at the 12 second mark, the parent container will have all three classnames for each keyframe: queue1, queue2 and queue3.
 
 You can now target all elements in the banner to animate at any of those keyframes.
 
 
 ### STEP 3: Configure the ISI (Optional) ###
 
-An ISI container is pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the variables.scss file. For horizontal banners (ie: 728x90), the ISI appears on the right side of the canvas. For vertical or square banners (ie: 300x250), the ISI appears at the bottom.
+An ISI container and functionality is pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the variables.scss file. For horizontal banners (ie: 728x90), the ISI appears on the right side of the canvas. For vertical or square banners (ie: 300x250), the ISI appears at the bottom.
 
-##### Auto-scroll Functionality #####
+#### Auto-scroll Functionality ####
 
 The ISI has pre-built functionality: 
 
-* *Auto scroll* - The ISI will autoscroll.
+* *Auto scroll* - The ISI will autoscroll on load.
 * *Scroll speed* - The speed of the autoscroll.
 * *Scroll delay* - Delaying the autoscroll.
 * *Scroll hard stop* - Stopping the autoscroll.
@@ -66,11 +66,18 @@ You can adjust these values by adding the following data attributes to the ISI e
 <div id="isi" data-autoscroll="true" data-autoscrollspeed="10" data-autoscrolldelay="1000" data-autoscrollstop="15000">
 ```
 
+* data-autoscroll = Give this attribute a value of 'true' to trigger the autoscroll functionality.
+* data-autoscrollspeed = Represents the number of pixels the ISI will scroll per second. IE: a value of 10 will autoscroll the ISI 10 pixels per seconds. Adjust this value to meet your requirements.
+* data-autoscrolldelay = Delay the start of the autoscroll by X milliseconds.
+* data-autoscrollstop = Force the ISI to stop scrolling after X milliseconds.
+
 To remove the auto-scroll functionality, simply remove the data attributes from the ISI element.
 
-##### Expand ISI #####
+It's important to note that the ISI will stop scrolling once the user engages with the banner (ie: click, manual scroll of the ISI). The ISI will pause scrolling if the user mouses over the ISI. On mouse out, the ISI will continue scrolling.
 
-The ISI also has pre-built "expand" functionalilty which expands the ISI to take up 100% of the banner canvas. The ISI can then be collapsed to it's initial state. To remove this functionality, simply remove the '.expand' element.
+#### Expand ISI ####
+
+The template also has pre-built "expand" functionalilty which expands the ISI to take up 100% of the banner canvas. Once expanded, the ISI can then be collapsed to it's initial state. To remove this functionality, simply remove the '.expand' element.
 
 
 
@@ -82,7 +89,7 @@ It is recommended that you DO NOT adjust values or work within the general.scss 
 
 
 
-### Animation ###
+### STEP 5: Animation ###
 
 The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the index.html file, and those elements are styled in the brand.scss file, the elements can then be animated using the keyframe classnames.
 
@@ -95,11 +102,21 @@ The steps to animate an element are:
 
 That's it!
 
+In the following example, once the first keyframe is triggered, we are hiding the first frame of the animation and displaying the second frame.
+
+```css
+
+	.queue1 .frame1 { opacity: 0; }
+	.queue1 .frame2 { opacity: 1; }
+
+```
+
+Use this structure to animate all elements using the .queue# keyframe classes in the *animation.scss* file.
 
 
 ### BONUS: Shortcuts ###
 
-Because project managers are my best friends (and because it gets rather annoying to expand the ISI and take screenshots for every route), functionality was built into the template to allow anyone to fully expand the ISI in full view under the banner for routing purposes. To fully expand the ISI, press CTRL-ALT-I. Pressing it again will restore the ISI.
+Because project managers are my best friends (and because it gets rather annoying to expand the ISI and take screenshots for every route), functionality was built into the template to allow anyone to fully expand the ISI in full view. The ISI content will appear underneath the banner. To fully expand the ISI, press CTRL-ALT-I. Pressing it again will restore the ISI to it's original state.
 
 
 
