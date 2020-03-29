@@ -119,7 +119,20 @@ Use this structure to animate all elements using the .queue[#] keyframe classes 
 
 ### BONUS: Shortcuts ###
 
+#### Show entire ISI ####
+
+```
+CTRL-ALT-I
+```
 Because project managers are my best friends (and because it gets rather annoying to expand the ISI and take screenshots for every route), functionality was built into the template to allow anyone to fully expand the ISI in full view. The ISI content will appear underneath the banner. To fully expand the ISI, press CTRL-ALT-I. Pressing it again will restore the ISI to it's original state.
+
+#### Debug mode ####
+
+```
+CTRL-ALT-D
+```
+
+Debug mode allows a tester to jump to each keyframe. Upon pressing CTRL-ALT-D, the banner animation is disabled and a debug panel is displayed at the top-right of the browser. Clicking each keyframe in the panel will change the state of the banner to that keyframe.
 
 
 
