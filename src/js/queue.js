@@ -11,11 +11,12 @@
 */
 
 var ad_keyframes = document.querySelector('meta[name="ad.keyframes"]').content.split(",");
+const queueTimeouts = [];
 
 function createDelay(delay, i) {
-	setTimeout(function(){
+	queueTimeouts.push( setTimeout(function(){
     	document.getElementById("content").classList.add('queue' + (i+1));
-	}, delay);	
+	}, delay) );	
 }
 
 /* Create timers for each keyframe which will add a classname of queue[index] to #content */
