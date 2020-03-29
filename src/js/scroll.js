@@ -11,16 +11,18 @@
 |
 |   To set the speed of the auto-scroll, add the following data attribute
 |   to #isi. The value will represent the number of pixels the #isi will 
-|   move per second.
+|   move per second. If this value is missing, the default will be 10. 
 |   	data-autoscrollspeed="10"
 |
 |	To set the delay of the auto-scroll, add the following data attribute.
-|	This value will represent the delay in milliseconds
+|	This value will represent the delay in milliseconds before the ISI will
+|	will begin auto-scrolling. If this value is missing, then the ISI will
+|	auto-scroll on load.
 |		data-autoscrolldelay="1000"
 |
 |	To set a hard stop to the auto-scroll after X milliseconds, add the
-|	following data attribute. Otherwise, the auto-scroll will scroll to the
-|	very bottom of the ISI.
+|	following data attribute. If this value is missing, the auto-scroll 
+|	will scroll to the very bottom of the ISI.
 |		data-autoscrollstop="15000"
 |
 */
@@ -28,7 +30,7 @@
 const isi = document.querySelector('#isi');
 
 isi_autoscroll = isi.dataset.autoscroll;
-isi_scroll_speed = parseFloat(isi.dataset.autoscrollspeed) / 10;
+isi_scroll_speed =  isi.dataset.autoscrollspeed ? ( parseFloat(isi.dataset.autoscrollspeed) / 10 ) : 1;
 isi_scroll_delay = parseInt(isi.dataset.autoscrolldelay);
 isi_scroll_stop = parseInt(isi.dataset.autoscrollstop);
 scrollpos = 0;
