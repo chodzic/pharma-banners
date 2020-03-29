@@ -73,7 +73,7 @@ body,p {
 .w336.h280 {
 
   .frames {
-    height: calc(100% - $isi-size)  !important;
+    height: calc(100% - #{$isi-size})  !important;
   }
 
   #legal {
@@ -91,7 +91,7 @@ body,p {
 .w970.h90 {
 
   .frames {
-    width: calc(100% - $isi-size) !important;
+    width: calc(100% - #{$isi-size}) !important;
   }
 
   #legal {
