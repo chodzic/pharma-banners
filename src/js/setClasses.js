@@ -45,6 +45,27 @@ el_content.style.width = ad_width + "px";
 
 
 
+
+/*
+| 	Determine the aspect ratio of the banner and then categorize it as either
+|	tall, square or wide.
+*/
+
+ad_aspect_ratio = ad_width / ad_height;
+
+if (ad_aspect_ratio < 0.8) {
+	size_category = "tall";
+} else if (ad_aspect_ratio >= 0.8 && ad_aspect_ratio <= 2) {
+	size_category = "square";
+} else {
+	size_category = "wide";
+}
+
+el_content.classList.add("size-" + size_category);;
+
+
+
+
 // If an ISI is detected, then give the parent container a classname of .has-isi
 if (el_isi) {
 	el_content.classList.add("has-isi");

@@ -65,12 +65,7 @@ body,p {
 
 
 /* Square and vertical sizes */
-.w200.h200,
-.w250.h250,
-.w300.h250,
-.w300.h600,
-.w160.h600,
-.w336.h280 {
+.size-square, .size-tall {
 
   .frames {
     height: calc(100% - #{$isi-size})  !important;
@@ -86,9 +81,7 @@ body,p {
 
 
 /* Horizontal sizes */
-.w468.h60,
-.w728.h90,
-.w970.h90 {
+.size-wide {
 
   .frames {
     width: calc(100% - #{$isi-size}) !important;

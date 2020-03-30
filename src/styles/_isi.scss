@@ -88,6 +88,15 @@
       border-radius: 0px;
     }
 
+    h2 {
+      font-size: 10px;
+
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
     a {
       color: $isi-link-color;
     }
@@ -126,9 +135,7 @@
     }
   }
 
-  &.w468.h60,
-  &.w728.h90,
-  &.w970.h90 {
+  &.size-wide {
 
     #legal {
       .header {
