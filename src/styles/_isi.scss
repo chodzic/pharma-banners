@@ -69,7 +69,7 @@
     font-size: $isi-font-size;
     z-index: 100;
     background: #fff;
-    height: calc(100% - #{$legal-label-height} - #{$legal-label-height} + 1px);
+    height: calc(100% - #{$legal-label-height} - #{$legal-label-height});
 
     .isi-wrapper {
       padding: 5px 10px;
@@ -117,7 +117,12 @@
 
 
 
-/* Expanded ISI to full screen */
+/* 
+|
+|   Expand the ISI to full screen
+|
+*/
+
 
 .isi-expand {
 
@@ -154,17 +159,23 @@
 }
 
 
-/* Conditional stylings based on elements on the canvas */
+/* 
+| Conditional stylings based on elements on the canvas 
+|
+*/
 
+
+/* If either the legal header or footer is not detected... */
 .no-legal-header, .no-legal-footer {
   #legal {
     #isi {
-      height: calc(100% - #{$legal-label-height} + 1px);
+      height: calc(100% - #{$legal-label-height} );
     }
   }
 }
 
 
+/* If neither the footer or header are detected... */
 .no-legal-header.no-legal-footer {
   #legal {
     #isi{

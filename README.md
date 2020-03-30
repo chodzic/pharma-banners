@@ -14,27 +14,7 @@ The first step is to prepare your banner canvas. You do so by adjusting the ad.s
 <meta name="ad.size" content="width=300,height=250">
 ```
 
-Adjust those values to the actual dimensions of your banner. The template will read those dimensions and adjust the size of the banner accordingly. The width and height values are converted to classnames and are added to the parent container. The classes are strctured as follows:
-
-```
-.w300
-.h250
-```
-
-These classes are used to manage ISI positioning. For example: ISIs for 300x250 banners typically appear at the bottom of the banner. On 728x90 sizes, the ISIs are typically on the right. This allows the template to dynamically identify the size of the banner through CSS by listening for a class combination of, say, .w300.h250.
-
-The following sizes are pre-built within the template.
-
-* 200x200
-* 250x250
-* 300x250
-* 336x280
-* 160x600
-* 300x600
-* 468x60
-* 728x90
-* 970x90
-
+Adjust those values to the actual dimensions of your banner. The template will read those dimensions and adjust the size of the banner accordingly. 
 
 
 ### STEP 2: Animation keyframes ###
@@ -54,14 +34,18 @@ You can now target all elements in the banner to animate at any of those keyfram
 
 The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the variables.scss file. For horizontal banners (ie: 728x90), the ISI appears on the right side of the canvas. For vertical or square banners (ie: 300x250), the ISI appears at the bottom. This logic is pre-set within the template and wouldn't need to be adjusted.
 
+#### ISI Position ####
+
+The ISI is dynamically positioned based on the banner's aspect ratio. Banners will be categorized as square, wide or tall. All tall and square banners will have an ISI positioned at the bottom of the canvas. Wide banners will position ads on the right of the canvas.
+
 #### Auto-scroll Functionality ####
 
 The ISI has pre-built auto-scroll functionality: 
 
-* *Auto scroll* - The ISI will autoscroll on load.
-* *Auto scroll speed* - The speed of the autoscroll determined by pixels per second.
-* *Auto scroll delay* - Delaying the autoscroll on load.
-* *Auto scroll hard stop* - Stopping the autoscroll at a specific duration.
+* The ISI can autoscroll on load.
+* The speed of the autoscroll.
+* Delaying the autoscroll on load.
+* Stopping the autoscroll at a specific duration.
 
 You can adjust these values by adding the following data attributes to the ISI element.
 
@@ -109,8 +93,8 @@ In the following example, once the first keyframe is triggered, we are hiding th
 
 ```css
 
-	.queue1 .frame1 { opacity: 0; }
-	.queue1 .frame2 { opacity: 1; }
+.queue1 .frame1 { opacity: 0; }
+.queue1 .frame2 { opacity: 1; }
 
 ```
 
