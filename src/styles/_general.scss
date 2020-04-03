@@ -41,27 +41,29 @@ body,p {
       transition: opacity $ani-duration ease-out;
     }
 
-    .frame1 {
-      opacity: 1;
-      z-index: 20;
-    }
+    /*
+    |   Generates a .frame-# class using the $frames variable and decrement
+    |   the z-index of each frame. This allows you to properly stack the frames
+    |   on top of each other, allowing you to simply adjust the opacity of the
+    |   frames (from 1 to 0) which will reveal the frames below.
+    |
+    |   Example:
+    |
+    |   .frame-1 { z-index: 4; }
+    |   .frame-2 { z-index: 3; }
+    |   .frame-3 { z-index: 2; }
+    |   .frame-4 { z-index: 1; }
+    |
+    */
 
-    .frame2 {
-      z-index: 18;
-    }
-
-    .frame3 {
-      z-index: 16;
-    }
-
-    .frame4 {
-      z-index: 14;
+    @for $i from 1 through $frames {
+      $zindex: $frames - $i + 1;
+      .frame-#{$i} { z-index: $zindex; }
     }
 
   }
 
 }
-
 
 
 /* Square and vertical sizes */

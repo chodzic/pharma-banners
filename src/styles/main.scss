@@ -7,8 +7,8 @@
 |
 */
 
-@import 'general.scss'; 		/* Default styles */
+@import 'general.scss'; 		/* Default style of banner structure */
 @import 'isi.scss';				/* ISI styles */
-@import 'brand.scss';			/* Brand-specific overrides */
+@import 'brand.scss';			/* Brand-specific overrides of structure and ISI */
 @import 'animation.scss';		/* Animation transitions */
 @import 'debug.scss';			/* Debug styles */

@@ -15,42 +15,44 @@
 |	infinite number of keyframes.
 |
 |	As a keyframe classname is added to the DOM, it will allow you to trigger
-|	CSS animations for any element on the canvas.
+|	CSS animations for any element on the canvas. Target the elements by using
+|	the keyframe name (ie: 'queue1') as a prefix for the css selector.
 |
 |	For example:
+|	------------
 |	If you want the first frame to fade out on .queue2, then create the
 |	following css selector:
-|		.queue1 .frame1 {opacity: 0!important;}
+|
+|		.queue1 .frame1 { opacity: 0 !important; }
 |
 |	It's important to note that the initial selector for all elements loaded
-|	onto the DOM must have a transition property, or else you won't see
-|	a transition.
+|	onto the DOM must have a transition property, otherwise, it won't animate.
 |
 */
 
 @import '_variables';
 
 .queue1 {
-	.frame1 {
+	.frame-1 {
 		opacity: 1 !important;
 	}
 }
 
 .queue2 {
-	.frame1 {
+	.frame-1 {
 		opacity: 0 !important;
 	}
 }
 
 
 .queue3 {
-	.frame2 {
+	.frame-2 {
 		opacity: 0 !important;
 	}
 }
 
 .queue4 {
-	.frame3 {
+	.frame-3 {
 		opacity: 0 !important;
 	}
 }
