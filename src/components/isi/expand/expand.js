@@ -24,17 +24,23 @@ var expand_parent = document.querySelectorAll('[data-isi-expand]');
 if (expand_parent.length) {
 	
 	/* inject the expand icon */
-
 	expand_parent[0].innerHTML += "<span class='expand'></span>";
+
+	/* Add classname to parent. */
+	document.getElementById("content").classList.add("has-isi-expand");
+
+	/* Function to expand the ISI */
+	function expandISI() {
+		document.getElementById("content").classList.toggle("isi-expand");
+	}
+
+	/* Expand icon click listener */
+	document.querySelector('.expand').addEventListener("click", expandISI);
+
+} else {
+
+	/* Add classname to parent. */
+	document.getElementById("content").classList.add("no-isi-expand");
+
+
 }
-
-/* Function to expand the ISI */
-
-function expandISI() {
-	document.getElementById("content").classList.toggle("isi-expand");
-}
-
-
-/* Expand icon click listener */
-
-document.querySelector('.expand').addEventListener("click", expandISI);

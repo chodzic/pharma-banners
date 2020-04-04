@@ -88,11 +88,3 @@ if (el_legal_footer) {
 } else {
 	el_content.classList.add("no-legal-footer");
 }
-
-
-// if the ISI expander is detected, then give the parent container a classname of .has-isi-expand
-if (el_isi_expand) {
-	el_content.classList.add("has-isi-expand");
-} else {
-	el_content.classList.add("no-isi-expand");
-}

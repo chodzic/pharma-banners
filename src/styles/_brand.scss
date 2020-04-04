@@ -14,9 +14,9 @@
 	.frames {
 
 		.frame {
-			font-size: 20px;
+
+			font: bold 18px/24px Arial;
 			color: #fff;
-			font-weight: bold;
 			text-align: center;
 			display: flex; 
 			align-items: center;
@@ -43,7 +43,7 @@
 			background: #666;
 		}
 
-		/* Create additional frame selectors if needed. */
+		/* Create additional selectors if more than 4 frames are needed. */
 	}
 
 	#legal {
@@ -76,7 +76,7 @@
 				p {
 
 					.blackbox {
-						
+
 					}
 
 				}

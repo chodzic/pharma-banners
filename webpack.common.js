@@ -9,7 +9,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
-  watch: true,
   module: {
     rules: [{
       },
@@ -40,11 +39,6 @@ module.exports = {
         }, ],
       }
     ],
-  },
-
-  devServer: {
-    writeToDisk: true,
-    port: 9000,
   },
   plugins: [
     new MiniCssExtractPlugin({

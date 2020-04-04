@@ -2,128 +2,143 @@
 
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Pharma Banner Template</title>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Pharma Banner Template</title>
 
 
-  <!-- MANDATORY: Modify this meta tag to match the dimensions of the banner.  -->
-  <meta name="ad.size" content="width=160,height=600">
+    <!-- MANDATORY: Modify this meta tag to match the dimensions of the banner.  -->
+    <meta name="ad.size" content="width=300,height=600">
 
-  <!-- Set animation keyframes separated by commas -->
-  <meta name="ad.keyframes" content="0,4000,8000,12000">
-
-
-  <script type="text/javascript">
-    var clickTag1 = "https://google.com";
-    var clickTag2 = "https://yahoo.com";
-    var clickTag3 = "https://bing.com";
-  </script>
+    <!-- Set animation keyframes separated by commas -->
+    <meta name="ad.keyframes" content="0,4000,8000,12000">
 
 
-</head>
+    <!-- Click tags -->
+    <script type="text/javascript">
+      var clickTag1 = "https://google.com";
+      var clickTag2 = "https://yahoo.com";
+      var clickTag3 = "https://bing.com";
+      /* Create additional clicktags if needed. */
+    </script>
 
-<body>
-  <div id="content">
+  </head>
 
-    <div class="frames" onclick="javascript:void(window.open(clickTag1, '_blank'))">
-      <div class="frame frame-1">
-        <p>This is the first frame.</p>
-      </div> 
-      <div class="frame frame-2">
-        <p>After 4 seconds, this frame will appear.</p>
-      </div> 
-      <div class="frame frame-3">
-        <p>The ISI should be auto-scrolling...</p>
+  <body>
+    <div id="content">
+
+      <div class="frames" onclick="javascript:void(window.open(clickTag1, '_blank'))">
+        
+        <div class="frame frame-1">
+          <p>This is the first frame.</p>
+        </div> 
+        
+        <div class="frame frame-2">
+          <p>After 4 seconds, this frame will appear.</p>
+        </div> 
+        
+        <div class="frame frame-3">
+          <p>The ISI should be auto-scrolling...</p>
+        </div>
+        
+        <div class="frame frame-4">
+          <p>...and should stop scrolling right about .... now!</p>
+        </div>
+
+        <!-- Create additional elements if they're needed. -->
+
       </div>
-      <div class="frame frame-4">
-        <p>...and should stop scrolling right about .... now!</p>
-      </div>
-    </div>
-   
-    <div id="legal">
-      <div class="header" data-isi-expand="show">
-        <span class="header-label">IMPORTANT SAFETY INFORMATION</span>
-      </div>
-      <div id="isi" 
-          data-autoscroll       = "true" 
-          data-autoscrollspeed  = "10" 
-          data-autoscrolldelay  = "1000" 
-          data-autoscrollstop   = "15000"
-      >
-        <div class="isi-wrapper">
+     
+      <div id="legal">
+
+        <div class="header" data-isi-expand="show">
+          <span class="header-label">IMPORTANT SAFETY INFORMATION</span>
+        </div>
+        
+        <div id="isi" 
+            data-autoscroll       = "true" 
+            data-autoscrollspeed  = "10" 
+            data-autoscrolldelay  = "1000" 
+            data-autoscrollstop   = "15000"
+        >
           
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id vulputate tellus.</p>
-          
-          <ul>
-            <li>Curabitur imperdiet, felis quis dapibus molestie.</li>
-            <li>ectus diam venenatis tortor, non bibendum purus.</li>
-            <li>Etiam congue, dui vitae maximus tristique, tellus elit pulvinar mauris, et consectetur mi nisl et libero.</li>
-            <li>Maecenas eu tellus arcu.</li>
-          </ul>
-          
-          <p class="blackbox">Nunc a nunc ac velit dictum pulvinar. Quisque venenatis ex a ultricies dapibus. Proin convallis risus in urna sollicitudin, a varius neque mollis. Pellentesque et mi vel lacus aliquam sollicitudin.</p>
+          <div class="isi-wrapper">
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id vulputate tellus.</p>
+            
+            <ul>
+              <li>Curabitur imperdiet, felis quis dapibus molestie.</li>
+              <li>ectus diam venenatis tortor, non bibendum purus.</li>
+              <li>Etiam congue, dui vitae maximus tristique, tellus elit pulvinar mauris, et consectetur mi nisl et libero.</li>
+              <li>Maecenas eu tellus arcu.</li>
+            </ul>
+            
+            <p class="blackbox">Nunc a nunc ac velit dictum pulvinar. Quisque venenatis ex a ultricies dapibus. Proin convallis risus in urna sollicitudin, a varius neque mollis. Pellentesque et mi vel lacus aliquam sollicitudin.</p>
 
-          <p>Proin elementum porttitor ipsum ut tristique. In hac habitasse platea dictumst. Curabitur eros turpis, elementum sed venenatis id, dictum id enim.</p> 
-          
-          <h2>Proin sed ante non massa condimentum molestie sed a magna.</h2>
+            <p>Proin elementum porttitor ipsum ut tristique. In hac habitasse platea dictumst. Curabitur eros turpis, elementum sed venenatis id, dictum id enim.</p> 
+            
+            <h2>Proin sed ante non massa condimentum molestie sed a magna.</h2>
 
-          <p>Phasellus at varius augue, ac accumsan quam. Morbi non feugiat mi.</p> 
+            <p>Phasellus at varius augue, ac accumsan quam. Morbi non feugiat mi.</p> 
 
-          <ol>
-            <li>Donec dapibus est urna, ac interdum lacus mattis et.</li>
-            <li>Aliquam consectetur mi ut mi congue interdum.</li>
-            <li>Vivamus euismod sollicitudin tortor, ultrices tristique sem pharetra non.</li>
-            <li>Proin feugiat condimentum libero, et volutpat risus.</li>
-          </ol>
-          
-          <p>Aliquam sit amet faucibus ex. Suspendisse convallis ornare scelerisque. Donec neque felis, eleifend a rhoncus in, suscipit at elit. Morbi posuere vestibulum sem quis porttitor.</p>
+            <ol>
+              <li>Donec dapibus est urna, ac interdum lacus mattis et.</li>
+              <li>Aliquam consectetur mi ut mi congue interdum.</li>
+              <li>Vivamus euismod sollicitudin tortor, ultrices tristique sem pharetra non.</li>
+              <li>Proin feugiat condimentum libero, et volutpat risus.</li>
+            </ol>
+            
+            <p>Aliquam sit amet faucibus ex. Suspendisse convallis ornare scelerisque. Donec neque felis, eleifend a rhoncus in, suscipit at elit. Morbi posuere vestibulum sem quis porttitor.</p>
 
-          <h2>Aliquam tristique sem sit amet est mattis, feugiat aliquet ligula convallis. Cras non orci id nulla ultrices aliquam. Mauris pellentesque eleifend sagittis.</h2>
+            <h2>Aliquam tristique sem sit amet est mattis, feugiat aliquet ligula convallis. Cras non orci id nulla ultrices aliquam. Mauris pellentesque eleifend sagittis.</h2>
 
-          <p>Cras diam arcu, rutrum eu arcu et, varius dictum sapien. Vestibulum est eros, fringilla ut maximus nec, accumsan eget tortor. Mauris scelerisque orci metus, at volutpat tortor porttitor a. In sit amet sapien nisl. Cras luctus semper odio at vehicula. Nam faucibus bibendum finibus.</p>
+            <p>Cras diam arcu, rutrum eu arcu et, varius dictum sapien. Vestibulum est eros, fringilla ut maximus nec, accumsan eget tortor. Mauris scelerisque orci metus, at volutpat tortor porttitor a. In sit amet sapien nisl. Cras luctus semper odio at vehicula. Nam faucibus bibendum finibus.</p>
 
-          <ul>
-            <li>Proin feugiat nulla est, in ultrices dui sagittis dignissim.</li>
-            <li>Ut et faucibus dui, in scelerisque ante.</li>
-            <li>Aliquam vehicula auctor dolor sed molestie.</li>
-            <li>Quisque eu augue scelerisque augue efficitur scelerisque.</li>
-            <li>Phasellus quis posuere nisi.</li>
-            <li>Aenean pharetra massa odio, quis ornare quam ultrices ut.</li>
-          </ul>
+            <ul>
+              <li>Proin feugiat nulla est, in ultrices dui sagittis dignissim.</li>
+              <li>Ut et faucibus dui, in scelerisque ante.</li>
+              <li>Aliquam vehicula auctor dolor sed molestie.</li>
+              <li>Quisque eu augue scelerisque augue efficitur scelerisque.</li>
+              <li>Phasellus quis posuere nisi.</li>
+              <li>Aenean pharetra massa odio, quis ornare quam ultrices ut.</li>
+            </ul>
 
-          <p>Phasellus luctus sagittis nunc, in consectetur tortor auctor et. Fusce molestie cursus nibh non tempus. Integer tincidunt congue mauris et elementum.</p>
-          
-          <h2>Vivamus lectus purus, eleifend at mattis non, iaculis sed nulla.</h2>
+            <p>Phasellus luctus sagittis nunc, in consectetur tortor auctor et. Fusce molestie cursus nibh non tempus. Integer tincidunt congue mauris et elementum.</p>
+            
+            <h2>Vivamus lectus purus, eleifend at mattis non, iaculis sed nulla.</h2>
 
-          <ul>
-            <li>Nam consequat sit amet orci sed rhoncus. Curabitur volutpat dignissim neque a facilisis. Nunc vehicula elit vel diam consequat, quis elementum erat hendrerit.</li>
-            <li>Integer ultrices massa malesuada ultricies tincidunt.</li>
-          </ul>
+            <ul>
+              <li>Nam consequat sit amet orci sed rhoncus. Curabitur volutpat dignissim neque a facilisis. Nunc vehicula elit vel diam consequat, quis elementum erat hendrerit.</li>
+              <li>Integer ultrices massa malesuada ultricies tincidunt.</li>
+            </ul>
 
-          <p>Sed nibh magna, consectetur ac ornare vitae, ultrices eget ligula. Etiam eget sagittis turpis, eu suscipit libero. Integer quis aliquam velit. Sed tincidunt malesuada lacus, in luctus neque ullamcorper nec. Duis eget laoreet libero. Nam fringilla risus nec lectus pharetra ultrices. Donec suscipit volutpat turpis, quis efficitur ligula pharetra ut. Nullam viverra mattis pretium. Etiam hendrerit felis nisi, in ultricies metus tempor sed. Vestibulum ac dui justo.</p>
-          
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam orci magna, pretium ut ante vel, pharetra dapibus lorem. Donec commodo dui magna, eget finibus nibh vestibulum eget.</p> 
+            <p>Sed nibh magna, consectetur ac ornare vitae, ultrices eget ligula. Etiam eget sagittis turpis, eu suscipit libero. Integer quis aliquam velit. Sed tincidunt malesuada lacus, in luctus neque ullamcorper nec. Duis eget laoreet libero. Nam fringilla risus nec lectus pharetra ultrices. Donec suscipit volutpat turpis, quis efficitur ligula pharetra ut. Nullam viverra mattis pretium. Etiam hendrerit felis nisi, in ultricies metus tempor sed. Vestibulum ac dui justo.</p>
+            
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam orci magna, pretium ut ante vel, pharetra dapibus lorem. Donec commodo dui magna, eget finibus nibh vestibulum eget.</p> 
 
-          <p>Duis aliquam, massa ac vulputate elementum, odio turpis feugiat ex, feugiat ultricies augue nisi placerat massa. Aliquam et tortor pellentesque, tincidunt odio vitae, vulputate metus. Curabitur condimentum at tortor ac consequat. Maecenas placerat libero eget pharetra rhoncus. Cras vehicula dapibus bibendum. Nullam accumsan ligula a lorem molestie volutpat. Aliquam metus risus, rutrum eget sem sit amet, cursus facilisis risus. In hac habitasse platea dictumst.</p>
+            <p>Duis aliquam, massa ac vulputate elementum, odio turpis feugiat ex, feugiat ultricies augue nisi placerat massa. Aliquam et tortor pellentesque, tincidunt odio vitae, vulputate metus. Curabitur condimentum at tortor ac consequat. Maecenas placerat libero eget pharetra rhoncus. Cras vehicula dapibus bibendum. Nullam accumsan ligula a lorem molestie volutpat. Aliquam metus risus, rutrum eget sem sit amet, cursus facilisis risus. In hac habitasse platea dictumst.</p>
 
-          <p>Praesent id diam arcu. Nulla molestie neque mauris, at pellentesque tortor suscipit sit amet. Proin at imperdiet enim.</p>
+            <p>Praesent id diam arcu. Nulla molestie neque mauris, at pellentesque tortor suscipit sit amet. Proin at imperdiet enim.</p>
 
-          <p>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <a target="_blank" href="https://www.fda.gov/medwatch">www.fda.gov/medwatch</a> or call <a href="tel:">1-800-FDA-1088</a>.</p>
+            <p>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <a target="_blank" href="https://www.fda.gov/medwatch">www.fda.gov/medwatch</a> or call <a href="tel:">1-800-FDA-1088</a>.</p>
 
-          <p>&copy; 2020 Pharma Labs. All rights reserved. All trademarks are the property of their respective owners.</p>
+            <p>&copy; 2020 Pharma Labs. All rights reserved. All trademarks are the property of their respective owners.</p>
 
-          <p>ABCD/EFG/0123/4567</p>
+            <p>ABCD/EFG/0123/4567</p>
 
-
+          </div>
 
         </div>
+        
+        <div class="footer">
+          <a href="javascript:void(window.open(clickTag2, '_blank'))">PRESCRIBING INFORMATION</a>
+        </div>
+      
       </div>
-      <div class="footer"><a href="javascript:void(window.open(clickTag2, '_blank'))">PRESCRIBING INFORMATION</a></div>
+      
     </div>
 
-    
-  </div>
-</body>
+  </body>
 
 </html>

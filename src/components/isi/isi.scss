@@ -1,9 +1,11 @@
 /*
 |--------------------------------------------------------------------------
-|   ISI Styles
+|   ISI & Legal Styles
 |--------------------------------------------------------------------------
 |
-|   ISI styles and states (ie: expanded, default)
+|   Styles for ISI & legal elements, including the scrollbar and default
+|   stylings for ISI content (ie: headlines, paragraphs, ordered lists,
+|   unordered list, ...). 
 |
 */
 
@@ -16,6 +18,8 @@
   z-index: 100;
   width: 100%;
   font-family: $isi-font;
+  display: flex;
+  flex-direction: column;
 
   .header, .footer {
     font-size: $legal-font-size;
@@ -49,10 +53,11 @@
     font-size: $isi-font-size;
     z-index: 100;
     background: #fff;
-    height: calc(100% - #{$legal-label-height} - #{$legal-label-height});
+    flex-grow: 1;
 
     .isi-wrapper {
       padding: 5px 10px;
+      line-height: 12px;
     }
 
     &::-webkit-scrollbar {
@@ -144,33 +149,4 @@
     height: 100%;
   }
 
-}
-
-
-
-
-
-/* 
-| Conditional stylings based on elements on the canvas 
-|
-*/
-
-
-/* If either the legal header or footer is not detected... */
-.no-legal-header, .no-legal-footer {
-  #legal {
-    #isi {
-      height: calc(100% - #{$legal-label-height} );
-    }
-  }
-}
-
-
-/* If neither the footer or header are detected... */
-.no-legal-header.no-legal-footer {
-  #legal {
-    #isi{
-      height: 100%;
-    }
-  }
 }
