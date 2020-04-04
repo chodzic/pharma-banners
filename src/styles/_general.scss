@@ -44,8 +44,9 @@ body,p {
     /*
     |   Generates a .frame-# class using the $frames variable and decrement
     |   the z-index of each frame. This allows you to properly stack the frames
-    |   on top of each other, allowing you to simply adjust the opacity of the
-    |   frames (from 1 to 0) which will reveal the frames below.
+    |   on top of each other, allowing you to simply adjust the opacity of each
+    |   frame (from 1 to 0) which will hide the top frame and reveal the 
+    |   frames below.
     |
     |   Example:
     |

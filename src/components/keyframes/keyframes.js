@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| 	Animation Queue
+| 	Timeline / Animation Queue
 |--------------------------------------------------------------------------
 |
 |	Keyframes are stored in the ad.keyframes meta tag in the index.html
@@ -12,17 +12,23 @@
 
 import keyframe_queues from './keyframes.scss';
 
-var ad_keyframes = document.querySelector('meta[name="ad.keyframes"]').content.split(",");
-const queueTimeouts = [];
+var meta_timeline = document.querySelector('meta[name="ad.keyframes"]');
 
-function createDelay(delay, i) {
-	queueTimeouts.push( setTimeout(function(){
-    	document.getElementById("content").classList.add('queue-' + (i+1));
-	}, delay) );	
-}
+if (meta_timeline) {
 
-/* Create timers for each keyframe which will add a classname of queue[index] to #content */
-for (var i = 0; i < ad_keyframes.length; i++) {
-  var key_val = ad_keyframes[i];
-  createDelay(key_val, i);
+	var ad_keyframes = meta_timeline.content.split(",");
+	const queueTimeouts = [];
+
+	function createDelay(delay, i) {
+		queueTimeouts.push( setTimeout(function(){
+	    	document.getElementById("content").classList.add('queue-' + (i+1));
+		}, delay) );	
+	}
+
+	/* Create timers for each keyframe which will add a classname of queue[index] to #content */
+	for (var i = 0; i < ad_keyframes.length; i++) {
+	  var key_val = ad_keyframes[i];
+	  createDelay(key_val, i);
+	}
+
 }

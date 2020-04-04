@@ -3,7 +3,8 @@
 |   ISI Expand
 |--------------------------------------------------------------------------
 |
-|   Style the ISI handle within the legal container.
+|   Style the ISI expand handle within the legal container. The arrow will
+|   will point up on square and tall banners and point left on wide banenrs.
 |
 */
 
@@ -39,6 +40,14 @@
 
 }
 
+
+/* 
+|
+|   Rotate the expand arrow so it points left on wide banners
+|
+*/
+
+
 .size-wide {
   #legal {
     .header {
@@ -49,4 +58,49 @@
       }
     }
   }
+}
+
+
+
+
+
+/* 
+|
+|   Expand the ISI to full screen
+|
+*/
+
+
+.isi-expand {
+
+  #legal {
+    height: 100% !important;
+    width: 100% !important;
+
+    .header {
+      .expand {
+        &:before {
+          top: 0;
+          transform: rotate(135deg);        
+        }
+      }
+    }
+  }
+
+  &.size-wide {
+
+    #legal {
+      .header {
+        .expand {
+          &:before {
+            top: 2px;
+            left: 0;
+            transform: rotate(45deg);         
+          }
+        }
+      }      
+    }
+    
+  }
+
 }

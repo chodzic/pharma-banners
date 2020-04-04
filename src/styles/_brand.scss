@@ -42,15 +42,23 @@
 		.frame-4 {
 			background: #666;
 		}
+
+		/* Create additional frame selectors if needed. */
 	}
 
 	#legal {
 
 		.header {
 
+			.header-label {
+
+			}
+
 			.expand {
 
 				&:before {
+
+					/* Adjust the 'border-color' property to change the color of the expand icon. */
 
 				}
 
@@ -61,7 +69,15 @@
 
 			.isi-wrapper {
 
+				h2 {
+
+				}
+
 				p {
+
+					.blackbox {
+						
+					}
 
 				}
 
@@ -77,7 +93,8 @@
 					li {
 
 						&:before {
-							/* Custom ISI bullet */
+
+							/* Custom ISI bullet. */
 						}
 					}
 				}
