@@ -15,7 +15,7 @@ const queueTimeouts = [];
 
 function createDelay(delay, i) {
 	queueTimeouts.push( setTimeout(function(){
-    	document.getElementById("content").classList.add('queue' + (i+1));
+    	document.getElementById("content").classList.add('queue-' + (i+1));
 	}, delay) );	
 }
 

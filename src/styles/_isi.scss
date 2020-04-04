@@ -101,7 +101,7 @@
       color: $isi-link-color;
     }
 
-    ul {
+    ul, ol {
       margin: 5px 0;
       padding: 0 0 0 20px;
 
@@ -111,9 +111,67 @@
 
     }
 
+    ul {
+
+      list-style: none;
+
+      li {
+
+        &:before {
+          content: "\2022";       /* Bullet unicode */
+          color: #000;            /* Color of bullet */
+          display: inline-block;  
+          width: 1em;             
+          margin-left: -1em;
+        }
+      }
+    }
+
   }
 
 }
+
+
+
+
+
+
+
+/* 
+|   Position the legal block   
+*/
+
+
+.size-square, .size-tall {
+
+  #legal {
+    height: $isi-size;
+    bottom: 0px !important;
+    font-family: $isi-font;
+  }
+
+}
+
+
+.size-wide {
+
+  #legal {
+    width: $isi-size;
+    right: 0px !important;
+    height: 100%;
+
+    .header {
+      .expand {
+        &:before {
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+
+}
+
+
 
 
 

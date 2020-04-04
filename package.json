@@ -4,8 +4,8 @@
   "description": "Pharma banner template with custom scrolling ISI.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit, 1",
     "build:prod": "webpack -p",
+    "build:dev": "",
     "serve": "npm run watch && npm run start",
     "start": "webpack-dev-server",
     "watch": "webpack -w"

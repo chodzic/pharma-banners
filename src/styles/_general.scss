@@ -73,12 +73,6 @@ body,p {
     height: calc(100% - #{$isi-size})  !important;
   }
 
-  #legal {
-    height: $isi-size;
-    bottom: 0px !important;
-    font-family: $isi-font;
-  }
-
 }
 
 
@@ -89,51 +83,5 @@ body,p {
     width: calc(100% - #{$isi-size}) !important;
   }
 
-  #legal {
-    width: $isi-size;
-    right: 0px !important;
-    height: 100%;
-
-    .header {
-      .expand {
-        &:before {
-          transform: rotate(225deg);
-        }
-      }
-    }
-  }
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Shortcut to display the entire ISI below the banner for routing purposes */
-
-.isi-show {
-  
-  overflow: visible !important;
-
-  #isi {
-
-    .isi-wrapper {
-
-      height: inherit !important;
-      top: 100%;
-      overflow: visible;
-      position: absolute;
-      width: 100%;
-    }
-
-  }
-
-}

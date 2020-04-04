@@ -18,22 +18,29 @@
 			color: #fff;
 			font-weight: bold;
 			text-align: center;
+			display: flex; 
+			align-items: center;
+
+			p {
+				width: 100%;
+				padding: 1rem;
+			}
 		}
 
 		.frame-1 {
-      		background: red;
+      		background: #333;
 		}
 
 		.frame-2 {
-			background: blue;
+			background: #444;
 		}
 
 		.frame-3 {
-			background: green;
+			background: #555;
 		}
 
 		.frame-4 {
-			background: purple;
+			background: #666;
 		}
 	}
 
@@ -58,7 +65,24 @@
 
 				}
 
+				ul, ol {
+
+					li {
+
+					}
+				}
+
 				ul {
+
+					li {
+
+						&:before {
+							/* Custom ISI bullet */
+						}
+					}
+				}
+
+				ol {
 
 					li {
 
@@ -69,6 +93,10 @@
 		}
 
 		.footer {
+
+			a {
+				
+			}
 
 		}
 	}
