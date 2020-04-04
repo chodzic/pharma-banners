@@ -7,7 +7,7 @@
 |
 */
 
-@import '_variables';
+@import '../../styles/_variables.scss';
 
 #legal {
 
@@ -26,27 +26,6 @@
 
     background: $legal-header-bgcolor;
     color: $legal-header-color;
-
-    .expand {
-      cursor: pointer;
-      position: absolute;
-      right: 5px;
-
-      &:before {
-        border-color: $isi-expand-icon-color;
-        border-style: solid;
-        border-width: 0.25em 0.25em 0 0;
-        content: '';
-        display: inline-block;
-        height: 0.45em;
-        left: 0.15em;
-        position: relative;
-        top: 0.15em;
-        transform: rotate(-45deg);
-        width: 0.45em;        
-      }
-
-    }
 
   }
 
@@ -159,14 +138,6 @@
     width: $isi-size;
     right: 0px !important;
     height: 100%;
-
-    .header {
-      .expand {
-        &:before {
-          transform: rotate(225deg);
-        }
-      }
-    }
   }
 
 }

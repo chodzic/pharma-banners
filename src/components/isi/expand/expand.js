@@ -9,6 +9,8 @@
 |
 */
 
+import isi_expand from './expand.scss';
+
 function expandISI() {
 	document.getElementById("content").classList.toggle("isi-expand");
 }

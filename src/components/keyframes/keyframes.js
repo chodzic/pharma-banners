@@ -10,6 +10,8 @@
 |
 */
 
+import keyframe_queues from './keyframes.scss';
+
 var ad_keyframes = document.querySelector('meta[name="ad.keyframes"]').content.split(",");
 const queueTimeouts = [];
 
@@ -20,7 +22,7 @@ function createDelay(delay, i) {
 }
 
 /* Create timers for each keyframe which will add a classname of queue[index] to #content */
-for (i = 0; i < ad_keyframes.length; i++) {
+for (var i = 0; i < ad_keyframes.length; i++) {
   var key_val = ad_keyframes[i];
   createDelay(key_val, i);
 }

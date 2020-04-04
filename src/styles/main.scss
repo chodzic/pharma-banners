@@ -3,11 +3,9 @@
 |   Main SCSS
 |--------------------------------------------------------------------------
 |
-|	Load all CSS files.
+|	Load general and brand specific styles.
 |
 */
 
 @import 'general.scss'; 		/* Default style of banner structure */
-@import 'isi.scss';				/* ISI styles */
 @import 'brand.scss';			/* Brand-specific overrides of structure and ISI */
-@import 'animation.scss';		/* Animation transitions */

@@ -1,0 +1,52 @@
+/*
+|--------------------------------------------------------------------------
+|   ISI Expand
+|--------------------------------------------------------------------------
+|
+|   Style the ISI handle within the legal container.
+|
+*/
+
+@import '../../../styles/_variables.scss';
+
+
+#legal {
+
+  .header {
+
+    .expand {
+      cursor: pointer;
+      position: absolute;
+      right: 5px;
+
+      &:before {
+        border-color: $isi-expand-icon-color;
+        border-style: solid;
+        border-width: 0.25em 0.25em 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        left: 0.15em;
+        position: relative;
+        top: 0.15em;
+        transform: rotate(-45deg);
+        width: 0.45em;        
+      }
+
+    }
+
+  }
+
+}
+
+.size-wide {
+  #legal {
+    .header {
+      .expand {
+        &:before {
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+}
