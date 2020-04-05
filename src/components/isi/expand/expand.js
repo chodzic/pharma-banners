@@ -35,7 +35,14 @@ if (expand_parent.length) {
 	}
 
 	/* Expand icon click listener */
-	document.querySelector('.expand').addEventListener("click", expandISI);
+
+	document.addEventListener('click',function(e){
+    	if(e.target && e.target.classList== 'expand'){
+          expandISI();
+     	}
+ 	});
+
+	//document.querySelector('.expand').addEventListener("click", expandISI);
 
 } else {
 

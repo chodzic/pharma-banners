@@ -27,7 +27,7 @@
 |
 */
 
-const isi = document.querySelector('#isi');
+let isi = document.querySelector('#isi');
 
 isi_autoscroll = isi.dataset.autoscroll;
 isi_scroll_speed =  isi.dataset.autoscrollspeed ? ( parseFloat(isi.dataset.autoscrollspeed) / 10 ) : 1;
@@ -48,7 +48,6 @@ function killScroll() {
 	pauseScroll();
 	clearInterval(autoscroll); 
 }
-
 
 // Will the ISI autoscroll?
 if (isi_autoscroll == "true") {
@@ -74,6 +73,8 @@ if (isi_autoscroll == "true") {
 			if (isi_scroll == false) { 
 				// do nothing
 			} else {
+
+				console.log(isi.offsetHeight);
 
 				// If the ISI has scrolled to the bottom...
 				if( isi.scrollTop === (isi.scrollHeight - isi.offsetHeight)) {

@@ -1,0 +1,51 @@
+body {
+	background-color: #fff;
+	background-image: linear-gradient(45deg, rgba(0,0,0,0.025) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.025) 75%, rgba(0,0,0,0.025)),
+	linear-gradient(45deg, rgba(0,0,0,0.025) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.025) 75%, rgba(0,0,0,0.025));
+	background-size: 50px 50px;
+	background-position: 0 0, 25px 25px;
+}
+
+
+#content {
+	margin: 50px auto;
+}
+
+#legal {
+	#isi {
+		.isi-wrapper {
+			background: #fff;
+		}
+	}
+}
+
+#debug-banner-wrapper {
+	margin: 60px auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+
+#debug-banner-width, #debug-banner-height {
+	position: absolute;
+	font-size: 11px;
+	border: 1px dotted #000;
+	transition: all 500ms ease-out;
+}
+
+#debug-banner-width  { 
+	top: -30px;
+    width: 100%;
+    border-bottom: none;
+    padding: 5px 0;
+    text-align: center;
+}
+
+#debug-banner-height {
+	height: 100%;
+    right: -40px;
+    padding: 0 5px;
+    border-left: none;
+}
