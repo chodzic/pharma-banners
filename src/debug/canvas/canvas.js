@@ -112,14 +112,12 @@ document.body.insertBefore(debug_panel_actions, el_banner_wrapper);
 /* 
 |	Generate HTML for the Action Panel
 */
-debug_panel_actions.innerHTML = "<div class='debug-panel-header'>Timer</div>";
-debug_panel_actions.innerHTML += "<div class='debug-panel-content'><div class='action'>Timer goes here.</div></div>";
+debug_panel_actions.innerHTML = "<div class='debug-panel-header'>Timeline</div>";
+debug_panel_actions.innerHTML += "<div class='debug-panel-content'><div class='action action-timer'><div class='timer'><span id='timeline-bar'></span></div><div id='debug-keyframes'></div></div></div>";
 debug_panel_actions.innerHTML += "<div class='debug-panel-header'>Actions</div><div class='debug-panel-content'><div class='action'><label>Show ISI:</label><div class='input off onoff' data-toggleclass='isi-show' data-toggleclasstarget='#content'></div></div><div class='action'><label>Show Background Pattern:</label><div class='input onoff' data-toggleclass='debug-hide-background' data-toggleclasstarget='body'></div></div>";
-debug_panel_actions.innerHTML += "<div class='debug-panel-header'>Timeline</div>";
-debug_panel_actions.innerHTML += "<div class='debug-panel-content'><div class='action'><div class='debug-timeline'><span>1</span><span>2</span><span>3</span><span>4</span></div></div></div>";
+
 
 var onoff = document.getElementsByClassName('onoff');
-console.log(onoff.length);
 
 for (var i = 0; i < onoff.length; i++) {
 	onoff[i].addEventListener('click',function(e){
@@ -141,3 +139,56 @@ window.onkeydown = function(e) {
     e.preventDefault();
   }
 };
+
+
+
+/* Debug mode to cycle through keyframes */
+function removeClassByPrefix(el, prefix) {
+    var regx = new RegExp('\\b' + prefix + '.-*?\\b', 'g');
+    el.className = el.className.replace(regx, '');
+    return el;
+}
+
+
+function timelineControls() {
+
+	/* Kill all animation queues */
+	var lastTimeout = setTimeout(";");
+	for (var i = 0 ; i < lastTimeout ; i++) {
+	    clearTimeout(i); 
+	}
+
+	/* Remove all queue classes from the parent */
+	removeClassByPrefix(document.getElementById("content"), "queue-");
+
+}
+
+/* Get all keyframes from meta data */
+var ad_keyframes = document.querySelector('meta[name="ad.keyframes"]').content.split(",");
+
+/* Build timeline */
+var keyframes_html = "";
+for (i = 0; i < ad_keyframes.length; i++) {
+		var key_val = ad_keyframes[i];
+		var key_pos = (key_val / 15000) * 100;;
+		keyframes_html += "<span style='left: "+key_pos+"%' data-index='"+(i+1)+"' data-time='"+key_val+"'>"+key_val+"</span>";
+}
+
+var debug_keyframes = document.getElementById("debug-keyframes");
+var debug_timer_bar = document.getElementById("timeline-bar");
+debug_keyframes.innerHTML = keyframes_html;
+
+
+var timeline_interval = 10;
+var timeline_current = 0;
+var timeline = setInterval(function() {
+
+	timeline_current = timeline_current + timeline_interval;
+	if (timeline_current > 15000) {
+		clearTimeout(timeline);
+	} else {
+		var timeline_progress = (timeline_current/15000)*100;
+		debug_timer_bar.style.width = timeline_progress + "%";
+	}
+
+},timeline_interval);
