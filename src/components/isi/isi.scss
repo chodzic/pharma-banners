@@ -16,7 +16,6 @@
   position: absolute;
   transition: all $ani-duration $easing;
   z-index: 100;
-  width: 100%;
   font-family: $isi-font;
   display: flex;
   flex-direction: column;
@@ -135,6 +134,7 @@
 
   #legal {
     height: $isi-size;
+    width: 100%;
     bottom: 0px !important;
   }
 

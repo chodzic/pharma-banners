@@ -4,6 +4,7 @@ body {
 	linear-gradient(45deg, rgba(0,0,0,0.025) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.025) 75%, rgba(0,0,0,0.025));
 	background-size: 50px 50px;
 	background-position: 0 0, 25px 25px;
+	padding-right: 200px;
 }
 
 
@@ -23,7 +24,7 @@ body {
 	margin: 60px auto;
 	position: absolute;
 	left: 0;
-	right: 0;
+	right: 200px;
 	margin: auto;
 }
 
@@ -48,4 +49,55 @@ body {
     right: -40px;
     padding: 0 5px;
     border-left: none;
+}
+
+#debug-panel {
+	position: absolute;
+	width: 200px;
+	height: 100%;
+	top: 0;
+	background: #111;
+	right: 0px;
+	color: #ccc;
+	font-size: 10px;
+
+	.debug-panel-header {
+		background: #424242;
+		font-weight: bold;
+    	padding: 7px 15px;
+    	text-transform: uppercase;
+	}
+
+	.debug-panel-content {
+		
+		background: #262626;
+		padding: 10px 15px 15px 15px;
+
+		.prop {
+
+			padding-bottom: 15px;
+
+			&:last-child {
+				padding-bottom: 0px;
+			}
+
+			label {
+				text-transform: uppercase;
+			    color: #999;
+			    font-size: 9px;
+			    border-bottom: 1px dotted #555;
+			    display: block;
+			    padding-bottom: 3px;
+			    margin-bottom: 3px;
+			}
+
+			.val {
+				color: #fff;
+				font-size: 12px;
+				font-weight: bold;
+			}
+
+		}
+
+	}
 }

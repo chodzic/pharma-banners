@@ -29,10 +29,11 @@
 
 let isi = document.querySelector('#isi');
 
-isi_autoscroll = isi.dataset.autoscroll;
+isi_autoscroll = isi.dataset.autoscroll.toLowerCase();
 isi_scroll_speed =  isi.dataset.autoscrollspeed ? ( parseFloat(isi.dataset.autoscrollspeed) / 10 ) : 1;
 isi_scroll_delay = parseInt(isi.dataset.autoscrolldelay);
 isi_scroll_stop = parseInt(isi.dataset.autoscrollstop);
+isi_scroll_hover = isi.dataset.isihover.toLowerCase();
 scrollpos = 0;
 
 
@@ -74,8 +75,6 @@ if (isi_autoscroll == "true") {
 				// do nothing
 			} else {
 
-				console.log(isi.offsetHeight);
-
 				// If the ISI has scrolled to the bottom...
 				if( isi.scrollTop === (isi.scrollHeight - isi.offsetHeight)) {
 					killScroll();
@@ -91,8 +90,13 @@ if (isi_autoscroll == "true") {
 	
 	// If the user interacts with the isi, pause the scroll 
 	isi.addEventListener("wheel", pauseScroll);
-	isi.addEventListener("mouseover", pauseScroll);
-	isi.addEventListener("mouseout", startScroll);
+	
+
+	// Should the ISI pause if the user hovers over it?
+	if (isi_scroll_hover == "pause") {
+		isi.addEventListener("mouseover", pauseScroll);
+		isi.addEventListener("mouseout", startScroll);		
+	}
 
 	// If user clicks any part of the banner, stop the autoscroll
 	document.querySelector('#content').addEventListener("mousedown", killScroll);
