@@ -9,7 +9,7 @@
 
 
     <!-- MANDATORY: Modify this meta tag to match the dimensions of the banner.  -->
-    <meta name="ad.size" content="width=300,height=600">
+    <meta name="ad.size" content="width=300,height=250">
 
     <!-- Set animation keyframes separated by commas -->
     <meta name="ad.keyframes" content="0,4000,8000,12000">
@@ -17,9 +17,9 @@
 
     <!-- Click tags -->
     <script type="text/javascript">
-      var clickTag1 = "https://google.com";
-      var clickTag2 = "https://yahoo.com";
-      var clickTag3 = "https://bing.com";
+      var clickTag1 = "https://pharmasite.com";
+      var clickTag2 = "https://pharmasite.com/prescribing_information.pdf";
+      var clickTag3 = "https://www.fda.gov/medwatch";
       /* Create additional clicktags if needed. */
     </script>
 
@@ -122,7 +122,7 @@
 
             <p>Praesent id diam arcu. Nulla molestie neque mauris, at pellentesque tortor suscipit sit amet. Proin at imperdiet enim.</p>
 
-            <p>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <a target="_blank" href="https://www.fda.gov/medwatch">www.fda.gov/medwatch</a> or call <a href="tel:">1-800-FDA-1088</a>.</p>
+            <p>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <span class="link" onclick="javascript:void(window.open(clickTag3, '_blank'))">www.fda.gov/medwatch</span> or call <a href="tel:">1-800-FDA-1088</a>.</p>
 
             <p>&copy; 2020 Pharma Labs. All rights reserved. All trademarks are the property of their respective owners.</p>
 
@@ -133,7 +133,7 @@
         </div>
         
         <div class="footer">
-          <a href="javascript:void(window.open(clickTag2, '_blank'))">PRESCRIBING INFORMATION</a>
+          <span class="link" onclick="javascript:void(window.open(clickTag2, '_blank'))">PRESCRIBING INFORMATION</span>
         </div>
       
       </div>

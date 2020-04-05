@@ -4,7 +4,18 @@ body {
 	linear-gradient(45deg, rgba(0,0,0,0.025) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.025) 75%, rgba(0,0,0,0.025));
 	background-size: 50px 50px;
 	background-position: 0 0, 25px 25px;
-	padding-right: 200px;
+	overflow: scroll;
+
+	&.debug-hide-background {
+		background: none;
+	}
+
+	&.debug-panel-hide {
+
+		#debug-panel {
+			opacity: 0;
+		}
+	}
 }
 
 
@@ -24,7 +35,6 @@ body {
 	margin: 60px auto;
 	position: absolute;
 	left: 0;
-	right: 200px;
 	margin: auto;
 }
 
@@ -53,13 +63,24 @@ body {
 
 #debug-panel {
 	position: absolute;
-	width: 200px;
-	height: 100%;
-	top: 0;
-	background: #111;
-	right: 0px;
-	color: #ccc;
-	font-size: 10px;
+    width: 250px;
+    height: max-content;
+    top: 20px;
+    background: #111;
+    color: #ccc;
+    font-size: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px #000;
+    transition: all 200ms ease-out;
+
+    &.panel-right {
+    	right: 20px;
+    }
+
+    &.panel-left {
+    	left: 20px;
+    }
 
 	.debug-panel-header {
 		background: #424242;
@@ -73,9 +94,10 @@ body {
 		background: #262626;
 		padding: 10px 15px 15px 15px;
 
-		.prop {
+		.prop, .action {
 
 			padding-bottom: 15px;
+			position: relative;
 
 			&:last-child {
 				padding-bottom: 0px;
@@ -85,16 +107,28 @@ body {
 				text-transform: uppercase;
 			    color: #999;
 			    font-size: 9px;
-			    border-bottom: 1px dotted #555;
 			    display: block;
 			    padding-bottom: 3px;
 			    margin-bottom: 3px;
+			}
+
+		}
+
+		.prop {
+
+			label {
+			    border-bottom: 1px dotted #555;					
 			}
 
 			.val {
 				color: #fff;
 				font-size: 12px;
 				font-weight: bold;
+				word-break: break-all;
+
+				a {
+					color: #fff;
+				}
 
 				.muted {
 					font-size: 80%;
@@ -102,6 +136,91 @@ body {
 				}
 			}
 
+			&.over {
+
+				label {
+					color: yellow;
+					border-bottom-color: yellow;
+				}
+
+				.val {
+					color: yellow;
+
+					a {
+						color: yellow;
+					}
+				}
+
+			}
+
+		}
+
+		.action {
+
+			padding: 5px 0;
+
+			label {
+				line-height: 20px;
+			}
+
+			.debug-timeline {
+
+				display: flex;
+
+				span {
+					width: 100%;
+				    text-align: center;
+				    border: 1px solid #666;
+				    padding: 5px;
+				    background: #333;
+				    cursor: pointer;
+				
+				    &:hover {
+				    	background: #555;
+				    }
+				}
+			}
+
+			.onoff {
+
+				position: absolute;
+			    width: 50px;
+			    height: 26px;
+			    background: #6edc5f;
+			    right: 0;
+			    top: 0;
+			    cursor: pointer;
+			    border-radius: 15px;
+
+			    &:before {
+			    	position: absolute;
+			    	content: "ON";
+			    	width: 30px;
+			    	height:22px;
+			    	background: #fff;
+			    	border-radius: 15px;
+			    	text-align: center;
+			    	color: #000;
+			    	font-size: 8px;
+			    	line-height: 23px;
+			    	transition: all 150ms ease-out;
+			    	left:16px;
+			    	margin: 2px;
+			    }
+
+				&.off {
+
+					background: #666;
+
+					&:before {
+						content: "OFF";
+						background: #999;
+						left: 0;
+					}
+
+				}
+
+			}
 		}
 
 	}

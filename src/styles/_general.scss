@@ -26,6 +26,11 @@ body,p {
   overflow: hidden;
   position: relative;
 
+  .link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
   .frames {
 
     position: absolute;
