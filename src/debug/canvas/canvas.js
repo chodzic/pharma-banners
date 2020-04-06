@@ -8,6 +8,7 @@ let el_body = document.body;
 let el_content = document.getElementById("content");
 let debug_isi = document.querySelector('#isi');
 let debug_legal = document.querySelector('#legal');
+let debug_isiexpand = (document.querySelector("[data-isi-expand]")) ? "TRUE" : "FALSE";
 
 
 /* 
@@ -61,7 +62,7 @@ if (el_content.classList.contains("size-tall") || el_content.classList.contains(
 /* 
 |	Generate HTML for the Prop Panel
 */
-debug_panel_props.innerHTML = "<div class='debug-panel-header'>Properties</div><div class='debug-panel-content'><div class='prop'><label>Width:</label><div class='val'>"+el_content.offsetWidth+" <span class='muted'>px</span></div></div><div class='prop'><label>Height:</label><div class='val'>"+el_content.offsetHeight+" <span class='muted'>px</span></div></div></div><div class='debug-panel-header'>ISI Rules</div><div class='debug-panel-content'><div class='prop'><label>Autoscroll:</label><div class='val'>"+debug_isi_autoscroll+"</div></div><div class='prop'><label>Speed:</label><div class='val'>"+debug_isi_scroll_speed+" <span class='muted'>px per second</span></div></div><div class='prop'><label>Delay:</label><div class='val'>"+debug_isi_scroll_delay+" <span class='muted'>ms</span></div></div><div class='prop'><label>Hard Stop:</label><div class='val'>"+debug_isi_scroll_stop+" <span class='muted'>ms</span></div></div><div class='prop'><label>On Hover:</label><div class='val'>"+debug_isi_scroll_hover+"</div></div><div class='prop'><label>Size:</label><div class='val'>"+banner_size+" <span class='muted'>%</span></div></div></div>";
+debug_panel_props.innerHTML = "<div class='debug-panel-header'>Properties</div><div class='debug-panel-content'><div class='prop'><label>Width:</label><div class='val'>"+el_content.offsetWidth+" <span class='muted'>px</span></div></div><div class='prop'><label>Height:</label><div class='val'>"+el_content.offsetHeight+" <span class='muted'>px</span></div></div></div><div class='debug-panel-header'>ISI Rules</div><div class='debug-panel-content'><div class='prop'><label>Autoscroll:</label><div class='val'>"+debug_isi_autoscroll+"</div></div><div class='prop'><label>Speed:</label><div class='val'>"+debug_isi_scroll_speed+" <span class='muted'>px per second</span></div></div><div class='prop'><label>Delay:</label><div class='val'>"+debug_isi_scroll_delay+" <span class='muted'>ms</span></div></div><div class='prop'><label>Hard Stop:</label><div class='val'>"+debug_isi_scroll_stop+" <span class='muted'>ms</span></div></div><div class='prop'><label>On Hover:</label><div class='val'>"+debug_isi_scroll_hover+"</div></div><div class='prop'><label>Size:</label><div class='val'>"+banner_size+" <span class='muted'>%</span></div></div><div class='prop'><label>Expand:</label><div class='val'>"+debug_isiexpand+"</div></div></div>";
 
 var clicktag_i = 1;
 var found_clicktag = true;
