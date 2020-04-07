@@ -10,8 +10,6 @@
 |
 */
 
-import keyframe_queues from './keyframes.scss';
-
 
 function startKeyframe() {
 
