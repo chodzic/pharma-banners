@@ -80,7 +80,7 @@ if (isi_autoscroll == "true") {
 					killScroll();
 				} else {
 					scrollpos = scrollpos + isi_scroll_speed;
-					isi.scrollTo({top: scrollpos, behavior: 'smooth'});				
+					isi.scrollTop = scrollpos;				
 				}
 			}
 		}, 100);
