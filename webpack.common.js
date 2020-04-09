@@ -23,9 +23,8 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [{
-          loader: 'html-loader'
-        }]
+        exclude: /node_modules/,
+        use: {loader: 'html-loader'}
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
