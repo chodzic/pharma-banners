@@ -6,3 +6,4 @@ import './isi_rules';
 import './clicktags';
 import './timeline';
 import './actions';
+import './shortcuts';
