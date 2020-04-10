@@ -2,18 +2,23 @@
 
 .isi-show {
   
-  overflow: visible !important;
 
-  #isi {
+  #content {
 
-    .isi-wrapper {
+    overflow: visible !important;
 
-      height: inherit !important;
-      top: 101%;
-      overflow: visible;
-      position: absolute;
-      width: calc( 100% - 20px);
-      padding: 0px !important;
+    #isi {
+
+      .isi-wrapper {
+
+        height: inherit !important;
+        top: 101%;
+        overflow: visible;
+        position: absolute;
+        width: calc( 100% - 20px);
+        padding: 0px !important;
+      }
+
     }
 
   }

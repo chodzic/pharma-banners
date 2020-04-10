@@ -16,6 +16,19 @@ body {
 			opacity: 0;
 		}
 	}
+
+	&.isi-show {
+		.action-isi-fpo {
+			height: auto;
+			padding: 5px 0 !important;
+		}
+	}
+
+	&.isi-show-fpo {
+		.isi-fpo {
+			display: table-cell !important;
+		}		
+	}
 }
 
 
@@ -23,10 +36,54 @@ body {
 	margin: 50px auto;
 }
 
+.action-isi-fpo {
+	height: 0px;
+	padding: 0px !important;
+	overflow: hidden;
+	transition: all 250ms linear;
+}
+
+
 #legal {
 	#isi {
 		.isi-wrapper {
 			background: #fff;
+		}
+
+		.isi-fpo {
+			
+			color: #999;
+			text-align: center;
+			vertical-align: middle;
+			width: 100%;
+			display: none;
+
+			span {
+				position: relative;
+				z-index: 50;
+				width: 100%;
+				background: #fff;
+				display: block;
+   				padding: 5px 0;
+			}
+
+			&:before, &:after {
+				content: " ";
+				width: 100%;
+				height: 1px;
+				background: #eee;
+				position: absolute;
+			    left: 0;
+			    top: 50%;	
+			    transform: rotate(25deg);
+			    z-index: 1;
+			}
+
+
+			&:before {
+				transform: rotate(-25deg);
+			}
+
 		}
 	}
 }
