@@ -22,12 +22,12 @@ This will build a package to demo the banner. It will include the console / prev
 ```
 npm run build:prod
 ```
-This will build a package for release. All HTML, CSS and JS will be minified and injected into the index.html file. All image assets will be included in the /assets/ directory.
+This will build a package for release. All HTML, CSS and JS will be minified and injected into the `index.html` file. All image assets will be included in the /assets/ directory.
 
 
 ### STEP 1: Preparing the canvas ###
 
-The first step for building a display ad using this template is to prepare your banner canvas. You do so by adjusting the ad.size meta data tag in the index.html file.
+The first step for building a display ad using this template is to prepare your banner canvas. You do so by adjusting the ad.size meta data tag in the `index.html` file.
 
 ```html
 <meta name="ad.size" content="width=300,height=250">
@@ -43,7 +43,7 @@ Adjust those values to the desired dimensions of your banner. The template will 
 
 A light-weight animation framework is built into this template. This framework listens for keyframes and uses classnames and CSS to target elements.
 
-Animations are encouraged to be handled entirely through CSS transitions. Keyframes are used to trigger these animations. To trigger these animation, class names are dynamically added to the parent container at specific durations. Keyframe durations are stored in the ad.keyframe meta data in the index.html file.
+Animations are encouraged to be handled entirely through CSS transitions. Keyframes are used to trigger these animations. To trigger these animation, class names are dynamically added to the parent container at specific durations. Keyframe durations are stored in the ad.keyframe meta data in the `index.html` file.
 
 ```html
 <meta name="ad.keyframes" content="4000,8000,12000">
@@ -54,15 +54,15 @@ This specific meta tag contains three keyframes separated by commas. At 4000 mil
 
 #### Create and style animation elements ####
 
-General banner properties are stored in the /styles/\_variables.scss file. Is it recommended that you create and store reusable banner variables in this file and then call them throughout your css.
+General banner properties are stored in the `/styles/\_variables.scss` file. Is it recommended that you create and store reusable banner variables in this file and then call them throughout your css.
 
-All elements must be stored within the #content element found in the index.html file. Once you create your elements, you then style them in the /styles/\_brands.scss file. Consider these properties the "onload" or "initial" values of these elements.
+All elements must be stored within the #content element found in the `index.html` file. Once you create your elements, you then style them in the `/styles/\_brands.scss` file. Consider these properties the "onload" or "initial" values of these elements.
 
 
 
 #### Animate elements ####
 
-The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the index.html file, and those elements are styled in the /styles/\_brand.scss file, the elements can then be animated using the keyframe classnames.
+The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the `index.html` file, and those elements are styled in the `/styles/\_brand.scss` file, the elements can then be animated using the keyframe classnames.
 
 In the following example, once the first keyframe is triggered, we are hiding the first frame of the animation and displaying the second frame. To do so, target .frame1 and .frame2 once .queue1 is added to the parent container.
 
@@ -81,7 +81,7 @@ Use this structure to animate all elements using the .queue[#] keyframe classes 
 
 ### STEP 3: Configure the ISI (Optional) ###
 
-The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the variables.scss file.
+The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the `styles/\_variables.scss` file.
 
 #### ISI Position ####
 
@@ -127,30 +127,30 @@ The template also has pre-built "expand" functionalilty which expands the ISI to
 
 ### CONSOLE ###
 
-In development and demo mode, the banner will appear within a console. The purpose of this console is to allow developers, QA analysts and project managers to produce, test and route banners more efficiently.
+     In development and demo mode, the banner will appear within a console. The purpose of this console is to allow developers, QA analysts and project managers to produce, test and route banners more efficiently.
 
 #### Banner Properties ###
 
-The banner properties (width, height, keyframes...) are displayed in the console to ensure that the dimensions are correct.
+     The banner properties (width, height, keyframes...) are displayed in the console to ensure that the dimensions are correct.
 
 #### ISI Rules ###
 
-The ISI rules (autoscroll, speed, hover, etc...) are displayed in the console, allowing QA analysts to ensure these rules are properly set.
+     The ISI rules (autoscroll, speed, hover, etc...) are displayed in the console, allowing QA analysts to ensure these rules are properly set.
 
 #### ClickTags ###
 
-All clickTags set in the banner are displayed in the console. As you hover over clickable elements within the banner (frames, links, etc...), the clicktags in the console are highlighted, indicating that the clicktable element will take the user to the highlighted clickTag.
+     All clickTags set in the banner are displayed in the console. As you hover over clickable elements within the banner (frames, links, etc...), the clicktags in the console are highlighted, indicating that the clicktable element will take the user to the highlighted clickTag.
 
 #### Timeline ###
 
-All keyframes of the banner are displayed in the timeline. Clicking each of the keyframes display that particular keyframe of the banner. 
+     All keyframes of the banner are displayed in the timeline. Clicking each of the keyframes display that particular keyframe of the banner. 
 
 #### Actions ###
 
-Toggles are built into the console which allow the user to hide and show specific elements from the console.
+     Toggles are built into the console which allow the user to hide and show specific elements from the console.
 
-* SHOW ISI - Expands the ISI and repositions it below the banner.
-* BACKGROUND PATTERN - Hide/show the background pattern of the canvas.
+     * SHOW ISI - Expands the ISI and repositions it below the banner.
+     * BACKGROUND PATTERN - Hide/show the background pattern of the canvas.
 
 
 
