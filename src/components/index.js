@@ -1,4 +1,4 @@
-import style 		from '../styles/main.scss';
+import style 		from './main.scss';
 
 import setClasses 	from './css_classes/css_classes.js';
 import scroll 		from './isi/isi.js';
