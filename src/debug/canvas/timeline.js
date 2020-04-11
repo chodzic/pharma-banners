@@ -69,10 +69,8 @@ document.querySelectorAll('.keyframe').forEach(item => {
 
   	/* Select the keyframe */
   	let all_keyframes = document.getElementsByClassName('keyframe');
-  	console.log(all_keyframes);
 
 	for (var i = 0; i < all_keyframes.length; i++) {
-		console.log("keyframes");
 	   all_keyframes[i].classList.remove('on');
 	}
   	event.target.classList.add("on");

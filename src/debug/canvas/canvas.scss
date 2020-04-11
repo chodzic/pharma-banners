@@ -32,6 +32,36 @@ body {
 }
 
 
+.isi-show {
+  
+
+  #content {
+
+    overflow: visible !important;
+
+    #isi {
+
+      .isi-wrapper {
+
+        height: inherit !important;
+        top: 101%;
+        overflow: visible;
+        position: absolute;
+        width: calc( 100% - 20px);
+        padding: 0px !important;
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
 #content {
 	margin: 50px auto;
 }
@@ -56,6 +86,8 @@ body {
 			text-align: center;
 			vertical-align: middle;
 			width: 100%;
+			overflow: hidden;
+			position: relative;
 			display: none;
 
 			span {

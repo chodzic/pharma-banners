@@ -15,8 +15,6 @@ var debug_isi_scroll_delay = parseInt(debug_isi.dataset.autoscrolldelay);
 var debug_isi_scroll_stop = parseInt(debug_isi.dataset.autoscrollstop);
 
 
-
-
 /* 
 |	Get ISI size compared to banner canvas
 */
@@ -28,8 +26,28 @@ if (el_content.classList.contains("size-tall") || el_content.classList.contains(
 
 
 
+var prop_array = [
+	["Autoscroll", debug_isi_autoscroll],
+	["Speed", debug_isi_scroll_speed, "px per second"],
+	["Delay", debug_isi_scroll_delay, "ms"],
+	["Hard Stop", debug_isi_scroll_stop, "ms"],
+	["On hover", debug_isi_scroll_hover],
+	["Size", banner_size],
+	["Expand",debug_isiexpand]
+];
 
-debug_panel_props = "<div class='debug-panel-header'>ISI Rules</div><div class='debug-panel-content col-50'><div class='prop'><label>Autoscroll:</label><div class='val'>"+debug_isi_autoscroll+"</div></div><div class='prop'><label>Speed:</label><div class='val'>"+debug_isi_scroll_speed+" <span class='muted'>px per second</span></div></div><div class='prop'><label>Delay:</label><div class='val'>"+debug_isi_scroll_delay+" <span class='muted'>ms</span></div></div><div class='prop'><label>Hard Stop:</label><div class='val'>"+debug_isi_scroll_stop+" <span class='muted'>ms</span></div></div><div class='prop'><label>On Hover:</label><div class='val'>"+debug_isi_scroll_hover+"</div></div><div class='prop'><label>Size:</label><div class='val'>"+banner_size+" <span class='muted'>%</span></div></div><div class='prop'><label>Expand:</label><div class='val'>"+debug_isiexpand+"</div></div></div>";
+var prop_html = "<div class='debug-panel-header'>Properties</div><div class='debug-panel-content col-50'>";
+
+for(i=0; i<prop_array.length;i++) {
+	if (prop_array[i][2]) {
+		muted_text = "<span class='muted'>"+prop_array[i][2]+"</span>";
+	} else {
+		muted_text = "";
+	}
+	prop_html += "<div class='prop'><label>"+prop_array[i][0]+":</label><div class='val'>"+prop_array[i][1]+" "+muted_text+"</div></div>";
+}
+
+prop_html += "</div>";
 
 
-panel_left.innerHTML += debug_panel_props;
+panel_left.innerHTML += prop_html;
