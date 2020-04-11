@@ -127,30 +127,30 @@ The template also has pre-built "expand" functionalilty which expands the ISI to
 
 ### CONSOLE ###
 
-     In development and demo mode, the banner will appear within a console. The purpose of this console is to allow developers, QA analysts and project managers to produce, test and route banners more efficiently.
+   In development and demo mode, the banner will appear within a console. The purpose of this console is to allow developers, QA analysts and project managers to produce, test and route banners more efficiently.
 
 #### Banner Properties ###
 
-     The banner properties (width, height, keyframes...) are displayed in the console to ensure that the dimensions are correct.
+   The banner properties (width, height, keyframes...) are displayed in the console to ensure that the dimensions are correct.
 
 #### ISI Rules ###
 
-     The ISI rules (autoscroll, speed, hover, etc...) are displayed in the console, allowing QA analysts to ensure these rules are properly set.
+   The ISI rules (autoscroll, speed, hover, etc...) are displayed in the console, allowing QA analysts to ensure these rules are properly set.
 
 #### ClickTags ###
 
-     All clickTags set in the banner are displayed in the console. As you hover over clickable elements within the banner (frames, links, etc...), the clicktags in the console are highlighted, indicating that the clicktable element will take the user to the highlighted clickTag.
+   All clickTags set in the banner are displayed in the console. As you hover over clickable elements within the banner (frames, links, etc...), the clicktags in the console are highlighted, indicating that the clicktable element will take the user to the highlighted clickTag.
 
 #### Timeline ###
 
-     All keyframes of the banner are displayed in the timeline. Clicking each of the keyframes display that particular keyframe of the banner. 
+   All keyframes of the banner are displayed in the timeline. Clicking each of the keyframes display that particular keyframe of the banner. 
 
 #### Actions ###
 
-     Toggles are built into the console which allow the user to hide and show specific elements from the console.
+   Toggles are built into the console which allow the user to hide and show specific elements from the console.
 
-     * SHOW ISI - Expands the ISI and repositions it below the banner.
-     * BACKGROUND PATTERN - Hide/show the background pattern of the canvas.
+   * SHOW ISI - Expands the ISI and repositions it below the banner.
+   * BACKGROUND PATTERN - Hide/show the background pattern of the canvas.
 
 
 
