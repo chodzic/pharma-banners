@@ -1,6 +1,29 @@
 # README #
 
-Create pharma-specific HTML display ads quickly along with ISI styles and functionality pre-built into a light, easy-to-use template. No dependencies required. Production assets (before content) compile at a light 8k. It is encouraged that you use CSS transitions / animations for these display ads. No javascript is required, however feel free to add javascript animation libraries to this template.
+Quickly create pharma-specific HTML display ads along with ISI styles and functionality pre-built into a light, easy-to-use template. No dependencies required. Production assets (before assets and content) compile at a light 8k -- including ISI autoscroll logic and animation framework. It is encouraged that you use CSS transitions / animations for these display ads. No javascript is required. However feel free to add javascript animation libraries to this template.
+
+A console / preview mode is included in this package for testing and demo purposes.
+
+
+### SET UP & CONFIGURATION ###
+
+Clone this repo and run the following commands:
+
+```
+npm run start
+```
+This will run developer mode on http://localhost:9000 and auto-refresh that environment on update.
+
+```
+npm run build:demo
+```
+This will build a package to demo the banner. It will include the console / previewer.
+
+```
+npm run build:prod
+```
+This will build a package for release. All HTML, CSS and JS will be minified and injected into the index.html file. All image assets will be included in the /assets/ directory.
+
 
 ### STEP 1: Preparing the canvas ###
 
@@ -10,10 +33,15 @@ The first step for building a display ad using this template is to prepare your 
 <meta name="ad.size" content="width=300,height=250">
 ```
 
-Adjust those values to the actual dimensions of your banner. The template will read those dimensions and adjust the size of the banner accordingly. 
+Adjust those values to the desired dimensions of your banner. The template will read those dimensions and adjust the size of the banner accordingly. 
 
 
-### STEP 2: Animation keyframes ###
+### STEP 2: Animations ###
+
+
+#### Keyframes ####
+
+A light-weight animation framework is built into this template. This framework listens for keyframes and uses classnames and CSS to target elements.
 
 Animations are encouraged to be handled entirely through CSS transitions. Keyframes are used to trigger these animations. To trigger these animation, class names are dynamically added to the parent container at specific durations. Keyframe durations are stored in the ad.keyframe meta data in the index.html file.
 
@@ -23,7 +51,32 @@ Animations are encouraged to be handled entirely through CSS transitions. Keyfra
 
 This specific meta tag contains three keyframes separated by commas. At 4000 milliseconds (or, 4 seconds), the classname 'queue1' will be added to the parent container. At 8 seconds, 'queue2' will be added. At 12 seconds, the final class name, 'queue3', will be added. Using the example above, at the 12 second mark, the parent container will have all three classnames for each keyframe: queue1, queue2 and queue3.
 
-You can now target all elements in the banner to animate at any of those keyframes.
+
+#### Create and style animation elements ####
+
+General banner properties are stored in the /styles/\_variables.scss file. Is it recommended that you create and store reusable banner variables in this file and then call them throughout your css.
+
+All elements must be stored within the #content element found in the index.html file. Once you create your elements, you then style them in the /styles/\_brands.scss file. Consider these properties the "onload" or "initial" values of these elements.
+
+
+
+#### Animate elements ####
+
+The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the index.html file, and those elements are styled in the /styles/\_brand.scss file, the elements can then be animated using the keyframe classnames.
+
+In the following example, once the first keyframe is triggered, we are hiding the first frame of the animation and displaying the second frame. To do so, target .frame1 and .frame2 once .queue1 is added to the parent container.
+
+```css
+
+.queue1 .frame-1 { opacity: 0; }
+.queue1 .frame-2 { opacity: 1; }
+
+```
+
+This will give .frame-1 an opacity of 0 (or, hide it) and give .frame-2 an opacity of 1 (or, show it) once .queue1 is added to the DOM.
+
+Use this structure to animate all elements using the .queue[#] keyframe classes in the *keyframe* component.
+
 
 
 ### STEP 3: Configure the ISI (Optional) ###
@@ -36,7 +89,7 @@ The ISI is dynamically positioned based on the banner's aspect ratio. On load, b
 
 #### Auto-scroll Functionality ####
 
-The ISI has pre-built auto-scroll functionality: 
+The ISI has pre-built auto-scroll functionality. They are: 
 
 * Determine whether the ISI should autoscroll on load.
 * Set the speed of the autoscroll.
@@ -64,69 +117,40 @@ You can adjust these values by adding the following data attributes to the ISI e
 
 Remove all of these attributes to remove all autoscroll functionality from the banner.
 
-It's important to note that the ISI will stop scrolling once the user engages with the banner (ie: click, manual scroll of the ISI, and so on). The ISI will pause scrolling if the user mouses over the ISI. On mouse out, the ISI will continue scrolling.
+It's important to note that the ISI will stop scrolling once the user engages with the banner (ie: click text within the ISI, expand the ISI, manual scroll of the ISI).
 
 #### Expand ISI ####
 
 The template also has pre-built "expand" functionalilty which expands the ISI to take up 100% of the banner canvas. Once expanded, the ISI can then be collapsed to it's initial state. To include this fucntionality, add *data-isi-expand="show"* to the ISI header element (.header).
 
 
-### STEP 4: Styling the banner ###
 
-Banner properties are stored in the variables.scss file. Is it recommended that you store reusable banner variables in the variables.scss files and then call them throughout your css.
+### CONSOLE ###
 
-It is recommended that you DO NOT adjust values or work within the general.scss file. Instead, override any css properties of frames within the brand.scss file. The brand.scss comes prepopulated with all of the banner selectors. Feel free to add additional selectors to this file as you create HTML elements.
+In development and demo mode, the banner will appear within a console. The purpose of this console is to allow developers, QA analysts and project managers to produce, test and route banners more efficiently.
 
+#### Banner Properties ###
 
-### STEP 5: Animation ###
+The banner properties (width, height, keyframes...) are displayed in the console to ensure that the dimensions are correct.
 
-The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the index.html file, and those elements are styled in the brand.scss file, the elements can then be animated using the keyframe classnames.
+#### ISI Rules ###
 
-The steps to animate an element are:
+The ISI rules (autoscroll, speed, hover, etc...) are displayed in the console, allowing QA analysts to ensure these rules are properly set.
 
-1. Adjust the ad.keyframes meta tag in the *index.html* to add animation keyframe durations.
-1. Create the element you wish to animate in the *index.html*.
-1. Style the element in the *brand.scss* file. Typically, the styles and properties set in this file are the *on-load* properties of the elements. 
-1. Animate the element by adjusting the elements' css properties in *components/keyframes/keyframes.scss* file. Consider these values the "end" state of the elements.
+#### ClickTags ###
 
-That's it!
+All clickTags set in the banner are displayed in the console. As you hover over clickable elements within the banner (frames, links, etc...), the clicktags in the console are highlighted, indicating that the clicktable element will take the user to the highlighted clickTag.
 
-In the following example, once the first keyframe is triggered, we are hiding the first frame of the animation and displaying the second frame. To do so, target .frame1 and .frame2 once .queue1 is added to the parent container.
+#### Timeline ###
 
-```css
+All keyframes of the banner are displayed in the timeline. Clicking each of the keyframes display that particular keyframe of the banner. 
 
-.queue1 .frame1 { opacity: 0; }
-.queue1 .frame2 { opacity: 1; }
+#### Actions ###
 
-```
+Toggles are built into the console which allow the user to hide and show specific elements from the console.
 
-Use this structure to animate all elements using the .queue[#] keyframe classes in the *keyframe* component.
-
-
-### MODES ###
-
-#### Developer Mode ###
-
-Enter *npm run start* to load the banner in developer mode. While in developer mode, the debug canvas will appear. This canvas will display properties, clicktags and rules of the banner to ensure that the banner is wired up properly.
-
-#### Shortcuts ####
-
-```
-CTRL-ALT-I
-```
-Because project managers are my best friends (and because it gets rather annoying to expand the ISI and take screenshots for every route), functionality was built into the template to allow anyone to fully expand the ISI in full view. The ISI content will appear underneath the banner. To fully expand the ISI, press CTRL-ALT-I. Pressing it again will restore the ISI to it's original state.
-
-
-```
-CTRL-ALT-D
-```
-
-This will display the individual keyframes of the banner, and allow users to jump to each of those keyframes. Upon pressing CTRL-ALT-D, the banner animation is disabled and a timeline console is displayed at the top-right of the browser. Clicking each keyframe in the panel will change the state of the banner to that keyframe.
-
-
-#### Production Mode (Build) ###
-
-Enter *npm run build* to generate production-ready files. These files will be minimized and all debug / shortcut commands will be removed. The /dist folder will contain your production files.
+* SHOW ISI - Expands the ISI and repositions it below the banner.
+* BACKGROUND PATTERN - Hide/show the background pattern of the canvas.
 
 
 

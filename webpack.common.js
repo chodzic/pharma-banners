@@ -46,7 +46,16 @@ module.exports = {
     // new ErrorOverlayPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      // inlineSource: '.(js|css)$'
+      inlineSource: '.(js|css)$',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      }
+
+      /* 
+      |   TODO: Remove CSS and JS file after minifying and inlining them into the index.html file.
+      */
+
     }),
     new HtmlWebpackInlineSourcePlugin(),
   ],
