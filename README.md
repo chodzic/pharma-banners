@@ -54,15 +54,15 @@ This specific meta tag contains three keyframes separated by commas. At 4000 mil
 
 #### Create and style animation elements ####
 
-General banner properties are stored in the `/styles/\_variables.scss` file. Is it recommended that you create and store reusable banner variables in this file and then call them throughout your css.
+General banner properties are stored in the `/styles/_variables.scss` file. Is it recommended that you create and store reusable banner variables in this file and then call them throughout your css.
 
-All elements must be stored within the #content element found in the `index.html` file. Once you create your elements, you then style them in the `/styles/\_brands.scss` file. Consider these properties the "onload" or "initial" values of these elements.
+All elements must be stored within the #content element found in the `index.html` file. Once you create your elements, you then style them in the `/styles/_brands.scss` file. Consider these properties the "onload" or "initial" values of these elements.
 
 
 
 #### Animate elements ####
 
-The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the `index.html` file, and those elements are styled in the `/styles/\_brand.scss` file, the elements can then be animated using the keyframe classnames.
+The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the `index.html` file, and those elements are styled in the `/styles/_brand.scss` file, the elements can then be animated using the keyframe classnames.
 
 In the following example, once the first keyframe is triggered, we are hiding the first frame of the animation and displaying the second frame. To do so, target .frame1 and .frame2 once .queue1 is added to the parent container.
 
@@ -81,7 +81,7 @@ Use this structure to animate all elements using the .queue[#] keyframe classes 
 
 ### STEP 3: Configure the ISI (Optional) ###
 
-The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the `styles/\_variables.scss` file.
+The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the `styles/_variables.scss` file.
 
 #### ISI Position ####
 
