@@ -29,76 +29,84 @@
 
 let isi = document.querySelector('#isi');
 
-isi_autoscroll = isi.dataset.autoscroll.toLowerCase();
-isi_scroll_speed =  isi.dataset.autoscrollspeed ? ( parseFloat(isi.dataset.autoscrollspeed) / 10 ) : 1;
-isi_scroll_delay = parseInt(isi.dataset.autoscrolldelay);
-isi_scroll_stop = parseInt(isi.dataset.autoscrollstop);
-isi_scroll_hover = isi.dataset.isihover.toLowerCase();
-scrollpos = 0;
+if (isi) {
 
+	isi_autoscroll = isi.dataset.autoscroll ? isi.dataset.autoscroll.toLowerCase() : "false";
+	isi_scroll_speed =  isi.dataset.autoscrollspeed ? ( parseFloat(isi.dataset.autoscrollspeed) / 10 ) : 1;
+	isi_scroll_delay = isi.dataset.autoscrolldelay ? parseInt(isi.dataset.autoscrolldelay) : 0;
+	isi_scroll_stop = isi.dataset.autoscrollstop ? parseInt(isi.dataset.autoscrollstop) : 0;
+	isi_scroll_hover = isi.dataset.isihover ? isi.dataset.isihover.toLowerCase() : null;
+	scrollpos = 0;
 
-function pauseScroll() {
-	isi_scroll = false;
-}
+	function pauseScroll() {
+		isi_scroll = false;
+	}
 
-function startScroll() {
-	isi_scroll = true;
-}
+	function startScroll() {
+		isi_scroll = true;
+	}
 
-function killScroll() {
-	pauseScroll();
-	clearInterval(autoscroll); 
-}
+	function killScroll() {
+		pauseScroll();
+		clearInterval(autoscroll); 
+	}
 
-// Will the ISI autoscroll?
-if (isi_autoscroll == "true") {
+	// Will the ISI autoscroll?
+	if (isi_autoscroll == "true") {
 
-	startScroll();
+		startScroll();
 
-	// Does the autoscroll stop after X milliseconds?
-	if (isi_scroll_stop) {
+		// Does the autoscroll stop after X milliseconds?
+		if (isi_scroll_stop) {
 
-		// Set a timeout that will trigger a stop to the autoscroll
+			// Set a timeout that will trigger a stop to the autoscroll
+			setTimeout(function() {
+				clearInterval(autoscroll); 
+			}, isi_scroll_stop);
+
+		}
+
+		// Set the delay for the autoscroll. If 0 then the ISI will autoscroll on load
 		setTimeout(function() {
-			clearInterval(autoscroll); 
-		}, isi_scroll_stop);
 
-	}
+			// Start the autoscroll
+			autoscroll = setInterval(function() {
 
-	// Set the delay for the autoscroll. If 0 then the ISI will autoscroll on load
-	setTimeout(function() {
-
-		// Start the autoscroll
-		autoscroll = setInterval(function() {
-
-			if (isi_scroll == false) { 
-				// do nothing
-			} else {
-
-				// If the ISI has scrolled to the bottom...
-				if( isi.scrollTop === (isi.scrollHeight - isi.offsetHeight)) {
-					killScroll();
+				if (isi_scroll == false) { 
+					// do nothing
 				} else {
-					scrollpos = scrollpos + isi_scroll_speed;
-					isi.scrollTop = scrollpos;				
+
+					// If the ISI has scrolled to the bottom...
+					if( isi.scrollTop === (isi.scrollHeight - isi.offsetHeight)) {
+						killScroll();
+					} else {
+						scrollpos = scrollpos + isi_scroll_speed;
+						isi.scrollTop = scrollpos;				
+					}
 				}
-			}
-		}, 100);
+			}, 100);
 
-	}, isi_scroll_delay)
+		}, isi_scroll_delay)
 
-	
-	// If the user interacts with the isi, pause the scroll 
-	isi.addEventListener("wheel", pauseScroll);
-	
+		
+		// If the user interacts with the isi, pause the scroll 
+		isi.addEventListener("wheel", pauseScroll);
+		
 
-	// Should the ISI pause if the user hovers over it?
-	if (isi_scroll_hover == "pause") {
-		isi.addEventListener("mouseover", pauseScroll);
-		isi.addEventListener("mouseout", startScroll);		
+		// Should the ISI pause if the user hovers over it?
+		if (isi_scroll_hover == "pause") {
+			isi.addEventListener("mouseover", pauseScroll);
+			isi.addEventListener("mouseout", startScroll);		
+		}
+
+		// If user clicks any part of the banner, stop the autoscroll
+		document.querySelector('#content').addEventListener("mousedown", killScroll);
+
 	}
 
-	// If user clicks any part of the banner, stop the autoscroll
-	document.querySelector('#content').addEventListener("mousedown", killScroll);
+
 
 }
+
+
+
