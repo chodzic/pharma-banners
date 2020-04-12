@@ -112,30 +112,19 @@ body {
 				word-break: break-all;
 
 				a {
-					color: #fff;
+					color: #ccc;
+					font-weight: normal;
+					font-size: 12px;
+
+					&:hover {
+						color: #fff;
+					}
 				}
 
 				.muted {
 					font-size: 80%;
 					color: #999;
 				}
-			}
-
-			&.over {
-
-				label {
-					color: #6edc5f;
-					border-bottom-color: #6edc5f;
-				}
-
-				.val {
-					color: #6edc5f;
-
-					a {
-						color: #6edc5f;
-					}
-				}
-
 			}
 
 		}

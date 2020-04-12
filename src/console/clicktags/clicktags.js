@@ -1,3 +1,5 @@
+import "./clicktags.scss";
+
 let panel_left = document.querySelector('.panel-left');
 
 var clicktag_i = 1;
@@ -14,7 +16,7 @@ do {
 }
 while (found_clicktag == true);
 
-debug_panel_props = "<div class='debug-panel-header'>ClickTags</div><div class='debug-panel-content'>"+clicktag_html+"</div>";
+var debug_panel_props = "<div class='debug-panel-header'>ClickTags</div><div class='debug-panel-content clicktag-wrapper'>"+clicktag_html+"</div>";
 
 
 var onclick_els = document.querySelectorAll('[onclick]');
