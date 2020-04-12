@@ -19,9 +19,11 @@
       cursor: pointer;
       position: absolute;
       right: 5px;
+      padding: 0 6px 0 5px;
+      right: 0;
 
       &:before {
-        border-color: $isi-expand-icon-color;
+        border-color: #666;
         border-style: solid;
         border-width: 0.25em 0.25em 0 0;
         content: '';
@@ -32,6 +34,14 @@
         top: 0.15em;
         transform: rotate(-45deg);
         width: 0.45em;        
+      }
+
+      &:hover {
+        background: #ccc;
+
+          &:before {
+            border-color: #000;
+          }
       }
 
     }

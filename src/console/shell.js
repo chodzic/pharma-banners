@@ -3,7 +3,7 @@
 |	Get elements
 */
 let el_content = document.getElementById("content");
-
+let el_isi = document.querySelector(".isi-wrapper");
 
 
 /* 
@@ -34,3 +34,12 @@ debug_panel_actions.setAttribute("id", "debug-panel");
 debug_panel_actions.classList.add("panel-right");
 document.body.insertBefore(debug_panel_actions, el_banner_wrapper);
 debug_panel_actions.innerHTML += "<div class='wrapper-timeline'></div><div class='wrapper-actions'></div>";
+
+
+/*
+|	Set fixed width of ISI
+*/
+
+var isi_width = el_isi.offsetWidth;
+el_isi.style.width = el_isi.offsetWidth - 20 + "px";
+console.log(isi_width);

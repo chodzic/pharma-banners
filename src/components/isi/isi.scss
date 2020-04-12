@@ -13,6 +13,7 @@
 
 #legal {
 
+  user-select: none;
   position: absolute;
   transition: all $ani-duration $easing;
   z-index: 100;

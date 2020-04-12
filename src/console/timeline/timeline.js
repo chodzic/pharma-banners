@@ -1,9 +1,13 @@
+import "./timeline.scss";
+
+
 let panel_right = document.querySelector('.wrapper-timeline');
 
-debug_panel_actions = "<div class='debug-panel-header'>Timeline</div><div class='debug-panel-content'><div class='action action-timer'><div class='timer'><span id='timeline-bar'></span></div><div id='debug-keyframes'></div></div></div>";
+var debug_panel_actions = "<div class='debug-panel-header'>Timeline</div><div class='debug-panel-content'><div class='action action-timer'><div class='timer'><span id='timeline-bar'></span></div><div id='debug-keyframes'></div></div></div>";
+
+panel_right.innerHTML = debug_panel_actions;
 
 
-panel_right.innerHTML += debug_panel_actions;
 
 /* Debug mode to cycle through keyframes */
 function removeClassByPrefix(el, prefix) {

@@ -1,1 +1,0 @@
-import './canvas/_canvas.js';

@@ -32,7 +32,7 @@ var prop_array = [
 	["Delay", debug_isi_scroll_delay, "ms"],
 	["Hard Stop", debug_isi_scroll_stop, "ms"],
 	["On hover", debug_isi_scroll_hover],
-	["Size", banner_size],
+	["Size", banner_size, "%"],
 	["Expand",debug_isiexpand]
 ];
 
