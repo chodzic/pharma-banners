@@ -35,7 +35,7 @@ var el_isi_h3 = document.querySelector(".isi-wrapper h3");
 var el_isi_p = document.querySelector(".isi-wrapper p");
 var el_isi_ul = document.querySelector(".isi-wrapper ul");
 var el_isi_li = document.querySelector(".isi-wrapper ul li");
-var el_isi_a = document.querySelector(".isi-wrapper a");
+var el_isi_a = document.querySelector(".isi-wrapper .link");
 
 function getElComputedStyle(el,prop) {
 	return window.getComputedStyle(el, null).getPropertyValue(prop);
@@ -60,7 +60,7 @@ var prop_array = [
 			[ "color", rgb2hex(getElComputedStyle(el_isi,"color")) ]
 		]
 	],
-	["Headline", 
+	["Headline &lt;h2>", 
 		[
 			[ "font-family", getElComputedStyle(el_isi_h2,"font-family") ],
 			[ "font-size", getElComputedStyle(el_isi_h2,"font-size") ],
@@ -69,7 +69,7 @@ var prop_array = [
 			[ "color", rgb2hex(getElComputedStyle(el_isi_h2,"color")) ]
 		] 
 	],
-	["Subhead", 
+	["Subhead &lt;h3>", 
 		[
 			[ "font-family", getElComputedStyle(el_isi_h3,"font-family") ],
 			[ "font-size", getElComputedStyle(el_isi_h3,"font-size") ],
@@ -78,7 +78,7 @@ var prop_array = [
 			[ "color", rgb2hex(getElComputedStyle(el_isi_h2,"color")) ]
 		] 
 	],
-	["Paragraph", 
+	["Paragraph &lt;p>", 
 		[
 			[ "font-family", getElComputedStyle(el_isi_p,"font-family") ],
 			[ "font-size", getElComputedStyle(el_isi_p,"font-size") ],
@@ -87,7 +87,7 @@ var prop_array = [
 			[ "color", rgb2hex(getElComputedStyle(el_isi_p,"color")) ]
 		] 
 	],
-	["List Item", 
+	["List Item &lt;li>", 
 		[
 			[ "font-family", getElComputedStyle(el_isi_li,"font-family") ],
 			[ "font-size", getElComputedStyle(el_isi_li,"font-size") ],
