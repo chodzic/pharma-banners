@@ -40,6 +40,7 @@ debug_panel_actions.innerHTML += "<div class='wrapper-timeline'></div><div class
 |	Set fixed width of ISI
 */
 
-var isi_width = el_isi.offsetWidth;
-el_isi.style.width = el_isi.offsetWidth - 20 + "px";
-console.log(isi_width);
+if (el_isi) {
+	var isi_width = el_isi.offsetWidth;
+	el_isi.style.width = el_isi.offsetWidth - 20 + "px";
+}

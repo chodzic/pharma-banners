@@ -91,3 +91,24 @@ body,p {
 
 }
 
+
+/* No ISI exists */
+
+.no-isi {
+
+  &.size-square, &.size-tall {
+
+    .frames {
+      height: 100% !important;
+    }
+
+  }
+
+  &.size-wide {
+    .frames {
+      width: 100% !important;
+    }    
+  }
+
+
+}
