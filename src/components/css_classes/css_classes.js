@@ -39,7 +39,7 @@ el_content.classList.add("w" + ad_width);
 el_content.classList.add("h" + ad_height);
 
 
-/*  Sets the overall width and height of the banner based on the meta data value. */
+/*  Sets the overall width and height of the banner based on the ad.size meta data value. */
 el_content.style.height = ad_height + "px";
 el_content.style.width = ad_width + "px";
 
@@ -48,7 +48,8 @@ el_content.style.width = ad_width + "px";
 
 /*
 | 	Determine the aspect ratio of the banner and then categorize it as either
-|	tall, square or wide.
+|	tall, square or wide. The class name .size-[category] will be added to the
+|	#content element.
 */
 
 ad_aspect_ratio = ad_width / ad_height;
@@ -62,7 +63,6 @@ if (ad_aspect_ratio < 0.8) {
 }
 
 el_content.classList.add("size-" + size_category);;
-
 
 
 

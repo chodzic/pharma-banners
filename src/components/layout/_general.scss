@@ -8,6 +8,7 @@
 |
 */
 
+/* Load variables */
 @import '../../styles/_variables';
 
 
@@ -31,7 +32,7 @@ body,p {
     text-decoration: underline;
   }
 
-  .frames {
+  #frames {
 
     position: absolute;
     width: 100%;
@@ -60,6 +61,8 @@ body,p {
     |   .frame-3 { z-index: 2; }
     |   .frame-4 { z-index: 1; }
     |
+    |   Default value is 10. Adjust this value in /styles/_variables.scss if you're
+    |   building a banner with more than 10 frames (And, if you are, sorry to hear that.)
     */
 
     @for $i from 1 through $frames {
@@ -75,7 +78,7 @@ body,p {
 /* Square and vertical sizes */
 .size-square, .size-tall {
 
-  .frames {
+  #frames {
     height: calc(100% - #{$isi-size})  !important;
   }
 
@@ -85,7 +88,7 @@ body,p {
 /* Horizontal sizes */
 .size-wide {
 
-  .frames {
+  #frames {
     width: calc(100% - #{$isi-size}) !important;
   }
 
@@ -98,14 +101,14 @@ body,p {
 
   &.size-square, &.size-tall {
 
-    .frames {
+    #frames {
       height: 100% !important;
     }
 
   }
 
   &.size-wide {
-    .frames {
+    #frames {
       width: 100% !important;
     }    
   }

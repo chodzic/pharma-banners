@@ -12,7 +12,7 @@
 
 #content {
 
-	.frames {
+	#frames {
 
 		.frame {
 
@@ -95,8 +95,36 @@
 
 						&:before {
 
-							/* Custom ISI bullet. */
+							/* Custom ISI bullet. Adjust the color property to change the color
+							of the bullet. */
 						}
+
+						/*
+
+							To change the symbol, add the the following class
+							name to the <li> tag. 
+
+							.symbol-dagger		
+							.symbol-double-dagger	
+							.symbol-paragraph-sign
+							.symbol-section-sign
+							.symbol-asterisk
+
+							To create new symbols, create a new selector name and enter the 
+							css code within the content property. Then use that selector as 
+							a class name on the <li> element in the HTML.
+
+							example: 
+
+							&.symbol-new-name:before; {
+								content: "/1234";
+							}
+
+							For a list of CSS Codes, go here:
+							https://www.toptal.com/designers/htmlarrows/punctuation/
+
+						*/
+
 					}
 				}
 

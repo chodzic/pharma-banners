@@ -36,7 +36,7 @@ var prop_array = [
 	["Expand",debug_isiexpand]
 ];
 
-var prop_html = "<div class='debug-panel-header'>ISI RULES</div><div class='debug-panel-content col-50'>";
+var prop_html = "<div class='debug-panel-header'>ISI RULES</div><div class='debug-panel-content col-2'>";
 
 for(i=0; i<prop_array.length;i++) {
 	if (prop_array[i][2]) {

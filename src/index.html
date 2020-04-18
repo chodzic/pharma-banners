@@ -8,42 +8,62 @@
     <title>Pharma Banner Template</title>
 
 
+
     <!-- MANDATORY: Modify this meta tag to match the dimensions of the banner.  -->
     <meta name="ad.size" content="width=300,height=600">
 
-    <!-- Set animation keyframes separated by commas -->
+    <!-- Set animation keyframes separated by commas. Feel free to remove this
+    meta tag if you choose to use a different animation library. -->
     <meta name="ad.keyframes" content="0,4000,8000,12000">
 
 
-    <!-- Click tags -->
+
+
+    <!-- CLICK TAGS 
+
+        ================================
+
+        Create additional clickTags if needed. Use the following structure
+        for clickTag implementation. Due to a bug in some browsers, it
+        is recommended that you don't apply the onclick attribute to <a> tags,
+        but rather to <div>'s and <span>'s
+
+        onclick="javascript:void(window.open(clickTag1, '_blank'))
+
+        It is recommended that you remove any unused clickTag variables. Three
+        were created in this template to demonstrate how to handle multiple
+        clickTags in one banner.
+
+    -->
+
     <script type="text/javascript">
       
       var clickTag1 = "https://pharmasite.com";
       var clickTag2 = "https://pharmasite.com/prescribing_information.pdf";
       var clickTag3 = "https://www.fda.gov/medwatch";
 
-      /* 
-      |
-      |   Create additional clickTags if needed. Use the following structure
-      |   for clickTag implementation.
-      |
-      |   onclick="javascript:void(window.open(clickTag1, '_blank'))
-      |
-      */
-
     </script>
+
+
+
+
+
 
   </head>
 
   <body>
+
     <div id="content">
 
+
+
       <!-- TODO:  Store all frame content in /content/frames.html and inject the content
-                  of the file below. This will allow devs to encapsulate the frames within
-                  this file.
+                  of the file below. This will allow devs to encapsulate only the frame
+                  markup in a single file.
       -->
 
-      <div class="frames" onclick="javascript:void(window.open(clickTag1, '_blank'))">
+
+      <div id="frames" onclick="javascript:void(window.open(clickTag1, '_blank'))">
         
         <div class="frame frame-1">
           <p>This is the first frame.</p>
@@ -64,9 +84,127 @@
         <!-- Create additional elements if they're needed. -->
 
       </div>
+      <!-- END: #frames -->
+     
 
+
+
+
+      <!-- TODO:  Store the ISI content in /content/isi.html and inject the content
+                  of the file below. This will allow devs to encapsulate the ISI within
+                  this file.
+      -->
+
+      <!--  LEGAL BLOCK 
+            ==================================
+            The legal block will dynamically be positioned to the bottom or to the right
+            of the banner canvas depending on the banner type. This element will be
+            positioned to the bottom of the banner for tall and square banners, and at
+            the bottom for wide banners.
+
+      -->
+
+      <div id="legal">
+
+        <!-- To allow users to expand the ISI, add the following attribute to the .header
+          element:
+              data-isi-expand="show"
+        -->
+        <div class="header">
+          <span class="header-label">IMPORTANT SAFETY INFORMATION</span>
+        </div>
+        
+
+        <!--  ISI RULES
+              ================================
+              The ISI rules are set using the following attributes. To remove the ISI rules,
+              simply remove all of these attributes.
+        -->
+
+        <div id="isi" 
+            data-autoscroll       = "TRUE" 
+            data-autoscrollspeed  = "10" 
+            data-autoscrolldelay  = "1000" 
+            data-autoscrollstop   = "15000"
+            data-isihover         = "PAUSE"
+        >
+          
+          <div class="isi-wrapper">
+            
+            <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id vulputate tellus.</p>
+            
+            <ul>
+              <li>Curabitur imperdiet, felis quis dapibus molestie.</li>
+              <li>ectus diam venenatis tortor, non bibendum purus.</li>
+              <li>Etiam congue, dui vitae maximus tristique, tellus elit pulvinar mauris, et consectetur mi nisl et libero.</li>
+              <li>Maecenas eu tellus arcu.</li>
+            </ul>
+            
+            <p class="blackbox">Nunc a nunc ac velit dictum pulvinar. Quisque venenatis ex a ultricies dapibus. Proin convallis risus in urna sollicitudin, a varius neque mollis. Pellentesque et mi vel lacus aliquam sollicitudin.</p>
+
+            <p>Proin elementum porttitor ipsum ut tristique. In hac habitasse platea dictumst. Curabitur eros turpis, elementum sed venenatis id, dictum id enim.</p> 
+            
+            <h2>Proin sed ante non massa condimentum molestie sed a magna.</h2>
+
+            <p>Phasellus at varius augue, ac accumsan quam. Morbi non feugiat mi.</p> 
+
+            <ol>
+              <li>Donec dapibus est urna, ac interdum lacus mattis et.</li>
+              <li>Aliquam consectetur mi ut mi congue interdum.</li>
+              <li>Vivamus euismod sollicitudin tortor, ultrices tristique sem pharetra non.</li>
+              <li>Proin feugiat condimentum libero, et volutpat risus.</li>
+            </ol>
+            
+            <p>Aliquam sit amet faucibus ex. Suspendisse convallis ornare scelerisque. Donec neque felis, eleifend a rhoncus in, suscipit at elit. Morbi posuere vestibulum sem quis porttitor.</p>
+
+            <h3>Aliquam tristique sem sit amet est mattis, feugiat aliquet ligula convallis. Cras non orci id nulla ultrices aliquam. Mauris pellentesque eleifend sagittis.</h3>
+
+            <p>Cras diam arcu, rutrum eu arcu et, varius dictum sapien. Vestibulum est eros, fringilla ut maximus nec, accumsan eget tortor. Mauris scelerisque orci metus, at volutpat tortor porttitor a. In sit amet sapien nisl. Cras luctus semper odio at vehicula. Nam faucibus bibendum finibus.</p>
+
+            <ul>
+              <li class="symbol-dagger">This symbol is a dagger.</li>
+              <li class="symbol-double-dagger">This symbol is a double dagger.</li>
+              <li class="symbol-section-sign">This symbol is a section sign.</li>
+              <li class="symbol-paragraph-sign">This symbol is a paragraph sign.</li>
+              <li class="symbol-asterisk">This symbol is an asterisk.</li>
+            </ul>
+
+            <p>Phasellus luctus sagittis nunc, in consectetur tortor auctor et. Fusce molestie cursus nibh non tempus. Integer tincidunt congue mauris et elementum.</p>
+            
+            <h2>Vivamus lectus purus, eleifend at mattis non, iaculis sed nulla.</h2>
+
+            <ul>
+              <li>Nam consequat sit amet orci sed rhoncus. Curabitur volutpat dignissim neque a facilisis. Nunc vehicula elit vel diam consequat, quis elementum erat hendrerit.</li>
+              <li>Integer ultrices massa malesuada ultricies tincidunt.</li>
+            </ul>
+
+            <p>Sed nibh magna, consectetur ac ornare vitae, ultrices eget ligula. Etiam eget sagittis turpis, eu suscipit libero. Integer quis aliquam velit. Sed tincidunt malesuada lacus, in luctus neque ullamcorper nec. Duis eget laoreet libero. Nam fringilla risus nec lectus pharetra ultrices. Donec suscipit volutpat turpis, quis efficitur ligula pharetra ut. Nullam viverra mattis pretium. Etiam hendrerit felis nisi, in ultricies metus tempor sed. Vestibulum ac dui justo.</p>
+            
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam orci magna, pretium ut ante vel, pharetra dapibus lorem. Donec commodo dui magna, eget finibus nibh vestibulum eget.</p> 
+
+            <p>Duis aliquam, massa ac vulputate elementum, odio turpis feugiat ex, feugiat ultricies augue nisi placerat massa. Aliquam et tortor pellentesque, tincidunt odio vitae, vulputate metus. Curabitur condimentum at tortor ac consequat. Maecenas placerat libero eget pharetra rhoncus. Cras vehicula dapibus bibendum. Nullam accumsan ligula a lorem molestie volutpat. Aliquam metus risus, rutrum eget sem sit amet, cursus facilisis risus. In hac habitasse platea dictumst.</p>
+
+            <p>Praesent id diam arcu. Nulla molestie neque mauris, at pellentesque tortor suscipit sit amet. Proin at imperdiet enim.</p>
+
+            <p>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <span class="link" onclick="javascript:void(window.open(clickTag3, '_blank'))">www.fda.gov/medwatch</span> or call <a href="tel:">1-800-FDA-1088</a>.</p>
+
+            <p>&copy; 2020 Pharma Labs. All rights reserved. All trademarks are the property of their respective owners.</p>
+
+            <p>ABCD/EFG/0123/4567</p>
+
+          </div>
+
+        </div>
+        
+        <div class="footer">
+          <span class="link" onclick="javascript:void(window.open(clickTag2, '_blank'))">PRESCRIBING INFORMATION</span>
+        </div>
+      
+      </div>
+      <!-- END: #legal -->
       
     </div>
+    <!-- END: #content -->
 
   </body>
 

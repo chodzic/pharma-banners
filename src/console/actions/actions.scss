@@ -1,15 +1,17 @@
 body {
 
-
-	&.debug-hide-background {
-		background: none;
-	}
-
 	&.debug-panel-hide {
+
+		background: #fff;
 
 		#debug-panel {
 			opacity: 0;
 		}
+
+		.isi-properties {
+			opacity: 0;
+		}
+
 	}
 
 	&.isi-show {

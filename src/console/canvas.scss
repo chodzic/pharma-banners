@@ -82,7 +82,7 @@ body {
 		.prop, .action {
 
 			position: relative;
-			margin-bottom: 20px;
+			margin-bottom: 15px;
 
 			&:last-child {
 				margin-bottom: 0px;
@@ -93,8 +93,6 @@ body {
 			    color: #999;
 			    font-size: 9px;
 			    display: block;
-			    padding-bottom: 3px;
-			    margin-bottom: 3px;
 			}
 
 		}
@@ -102,19 +100,17 @@ body {
 		.prop {
 
 			label {
-			    border-bottom: 1px dotted #555;					
+			
 			}
 
 			.val {
 				color: #fff;
-				font-size: 12px;
 				font-weight: bold;
 				word-break: break-all;
 
 				a {
 					color: #ccc;
 					font-weight: normal;
-					font-size: 12px;
 
 					&:hover {
 						color: #fff;
@@ -129,17 +125,24 @@ body {
 
 		}
 
-		&.col-50 {
+		&.col-2 {
 
 			.prop {
 				
-				display: inline-block;
-				width: 50%;
-
-				&:nth-last-child(-n+2) {
-					margin-bottom: 0px !important;
+				label {
+					width: 40%;
+					display: inline-block;
 				}
 
+				.val {
+					width: 60%;
+					display: inline-block;
+				}
+
+			}
+
+			&:nth-last-child {
+				margin-bottom: 0px !important;
 			}
 
 		}

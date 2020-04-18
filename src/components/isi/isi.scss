@@ -119,6 +119,28 @@
           width: 1em;             
           margin-left: -1em;
         }
+
+        &.symbol-paragraph-sign:before {
+          content: "\00B6";
+        }
+
+        &.symbol-dagger:before {
+          content: "\2020";
+        }
+
+        &.symbol-double-dagger:before {
+          content: "\2021";
+        }
+
+        &.symbol-asterisk:before {
+          content: "\002A";
+        }
+
+        &.symbol-section-sign:before {
+          content: "\00A7";
+        }
+
+
       }
     }
 

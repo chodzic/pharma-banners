@@ -3,10 +3,11 @@
 |   Main SCSS
 |--------------------------------------------------------------------------
 |
-|	Load general and brand specific styles.
+|	Load the main styles to render and animate the banner.
 |
 */
 
 @import './layout/general.scss'; 		/* Default style of banner structure */
+@import './layout/_atomic.scss';			/* Atomic CSS selectors */
 @import '../styles/brand.scss';			/* Brand-specific overrides of structure and ISI */
-@import '../styles/animations.scss';	/* Animation CSS */
+@import '../styles/animations.scss';	/* Transitions and animation CSS */
