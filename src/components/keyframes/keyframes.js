@@ -10,15 +10,13 @@
 |
 */
 
+/* Get keyframes */
+var meta_timeline = document.querySelector('meta[name="ad.keyframes"]');
 
-function startKeyframe() {
+/* If keyframes exist, then create each keyframe timeout */
+if (meta_timeline) {
 
-	/* Get keyframes */
-	var meta_timeline = document.querySelector('meta[name="ad.keyframes"]');
-
-
-	/* If keyframes exist, then create each keyframe timeout */
-	if (meta_timeline) {
+	function startKeyframe() {
 
 		var ad_keyframes = meta_timeline.content.split(",");
 		const queueTimeouts = [];
@@ -36,9 +34,9 @@ function startKeyframe() {
 		  var key_val = ad_keyframes[i];
 		  createDelay(key_val, i);
 		}
-
-		startKeyframe();
 		
 	}
+
+	startKeyframe();
 
 }
