@@ -131,16 +131,50 @@
           
           <div class="isi-wrapper">
             
-            <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id vulputate tellus.</p>
+            <h2>What is an ISI?</h2>
+
+            <p>The ISI is small, legal text that will appear either at the bottom or the right of the banner canvas.</p> 
+
+            <p>On load, the banner is categorized as either being tall, square or wide. For tall and square banners, the ISI will appear at the bottom of the canvas. For wide banners, the ISI will appear at the right of the canvas.</p>
             
+            <h2>List items should be easy and consistent</h2>
+
+            <p>By default, all lists will have a small dot to represent the bullet. These bullets can be changed to any of the symbols. To do so, give the &lt;li> a class name of any of the class names you see below (in code). If more symbols are needed, then add them under the "ul li:before" selector using the CSS code of the symbol in the "content" property. 
+
             <ul>
-              <li>Curabitur imperdiet, felis quis dapibus molestie.</li>
-              <li>ectus diam venenatis tortor, non bibendum purus.</li>
-              <li>Etiam congue, dui vitae maximus tristique, tellus elit pulvinar mauris, et consectetur mi nisl et libero.</li>
-              <li>Maecenas eu tellus arcu.</li>
+              <li class="symbol-dagger">This symbol is a dagger.</li>
+              <li class="symbol-double-dagger">This symbol is a double dagger.</li>
+              <li class="symbol-section-sign">This symbol is a section sign.</li>
+              <li class="symbol-paragraph-sign">This symbol is a paragraph sign.</li>
+              <li class="symbol-asterisk">This symbol is an asterisk.</li>
+              <li class="symbol-dash">This symbol is a dash.</li>
             </ul>
             
-            <p class="blackbox">Nunc a nunc ac velit dictum pulvinar. Quisque venenatis ex a ultricies dapibus. Proin convallis risus in urna sollicitudin, a varius neque mollis. Pellentesque et mi vel lacus aliquam sollicitudin.</p>
+            <p>The code above allows you to change the symbol per list item. If you want to change the symbols of all list items to dashes (instead of dots), give the &lt;ul> a class name of .symbol-dash.</p>
+
+            <ul class="symbol-dash">
+              <li>All list items in this unordered list will have dashes.</li>
+              <li>Make sure you give the parent &lt;ul> a class name of "symbol-dash"</li>
+            </ul>
+
+            <p>Sometimes you'll have lists within lists. To do so, add the &lt;ul> within the &lt;li> that will nest the list.</p>
+
+            <ul>
+              <li>This is an unordered list.</li>
+              <li>This list item has a list nested within it.
+                <ul>
+                  <li>This is a nest list.</li>
+                  <li>The default symbol for nested lists is a dash.</li>
+                  <li>Feel free to change the default list symbol by changing the class name of the parent &lt;ul></li>
+                </ul>
+              </li>
+            </ul>
+
+            <h2>Black boxes</h2>
+
+            <p>If you need to create a "blackox" treatment around specific blocks of text, simply add a "blackbox" class name to the paragraph tag.</p>
+
+            <p class="blackbox">This block of text will have a single pixel black border. Not much more to say about this treatment.</p>
 
             <p>Proin elementum porttitor ipsum ut tristique. In hac habitasse platea dictumst. Curabitur eros turpis, elementum sed venenatis id, dictum id enim.</p> 
             
@@ -160,15 +194,6 @@
             <h3>Aliquam tristique sem sit amet est mattis, feugiat aliquet ligula convallis. Cras non orci id nulla ultrices aliquam. Mauris pellentesque eleifend sagittis.</h3>
 
             <p>Cras diam arcu, rutrum eu arcu et, varius dictum sapien. Vestibulum est eros, fringilla ut maximus nec, accumsan eget tortor. Mauris scelerisque orci metus, at volutpat tortor porttitor a. In sit amet sapien nisl. Cras luctus semper odio at vehicula. Nam faucibus bibendum finibus.</p>
-
-            <ul>
-              <li class="symbol-dagger">This symbol is a dagger.</li>
-              <li class="symbol-double-dagger">This symbol is a double dagger.</li>
-              <li class="symbol-section-sign">This symbol is a section sign.</li>
-              <li class="symbol-paragraph-sign">This symbol is a paragraph sign.</li>
-              <li class="symbol-asterisk">This symbol is an asterisk.</li>
-              <li class="symbol-dash">This symbol is a dash.</li>
-            </ul>
 
             <p>Phasellus luctus sagittis nunc, in consectetur tortor auctor et. Fusce molestie cursus nibh non tempus. Integer tincidunt congue mauris et elementum.</p>
             
