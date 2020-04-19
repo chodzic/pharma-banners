@@ -79,6 +79,13 @@ body {
 		background: #262626;
 		padding: 10px 15px 15px 15px;
 
+		.note {
+			font-style: italic;
+			border-top: dotted 1px #666;
+			padding-top: 10px;
+			margin-top: 10px;
+		}
+
 		.prop, .action {
 
 			position: relative;
@@ -159,8 +166,6 @@ body {
 			label {
 				line-height: 20px;
 			}
-
-
 
 			.onoff {
 

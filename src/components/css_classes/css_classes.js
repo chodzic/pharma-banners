@@ -40,8 +40,8 @@ el_content.classList.add("h" + ad_height);
 
 
 /*  Sets the overall width and height of the banner based on the ad.size meta data value. */
-el_content.style.height = ad_height + "px";
-el_content.style.width = ad_width + "px";
+el_content.style.height = (ad_height-2) + "px";
+el_content.style.width = (ad_width-2) + "px";
 
 
 

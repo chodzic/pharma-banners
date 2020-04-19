@@ -10,7 +10,7 @@ let isi = document.querySelector('#isi');
 
 var isi_actions = isi ? "<div class='action'><label>Show ISI:</label><div class='input off onoff' data-toggleclass='isi-show' data-toggleclasstarget='body'></div></div><div class='action action-isi-fpo'><label>Show ISI FPO Message:</label><div class='input off onoff' data-toggleclass='isi-show-fpo' data-toggleclasstarget='body'></div></div>" : "";
 
-var debug_panel_actions = "<div class='debug-panel-header'>Actions</div><div class='debug-panel-content action-options'>"+isi_actions+"</div>";
+var debug_panel_actions = "<div class='debug-panel-header'>Actions</div><div class='debug-panel-content action-options'>"+isi_actions+"<div class='note'>Press spacebar to hide console.</div></div>";
 
 panel_right.innerHTML = debug_panel_actions;
 
