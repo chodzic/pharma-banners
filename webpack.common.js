@@ -1,7 +1,9 @@
 const path = require('path');
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 const webpack = require('webpack');
 
 module.exports = {
@@ -43,7 +45,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "main.css"
     }),
-    // new ErrorOverlayPlugin(),
+
+    new PurgecssPlugin({
+      paths: glob.sync(`src/**/*`,  { nodir: true }),
+    }),
+
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inlineSource: '.(js|css)$',
@@ -53,7 +59,7 @@ module.exports = {
       }
 
       /* 
-      |   TODO: Remove CSS and JS file after minifying and inlining them into the index.html file.
+      |   TODO: Implement a more elegant solution to remove the main.css and main.js file.
       */
 
     }),
