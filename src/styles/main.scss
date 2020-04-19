@@ -3,10 +3,20 @@
 |   Main SCSS
 |--------------------------------------------------------------------------
 |
-|	Load general and brand specific styles.
-|
 */
 
-@import './layout/general.scss'; 		/* Default style of banner structure */
-@import '../styles/brand.scss';			/* Brand-specific overrides of structure and ISI */
-@import '../styles/animations.scss';	/* Animation CSS */
+
+/* Default style of banner structure */
+@import './layout/general.scss';
+
+
+/* TODO: Create an atomic scss file to allow developers to pixel push content in the ISI. Must
+also remove unused selectors or else the filesize of the banner will increase by 10k. Must ONLY
+remove unused CSS in specific files. We need to assure that .queue selectors aren't removed. */
+
+/* Brand-specific overrides of structure and ISI. Use this file to style your banner elements */
+@import '../styles/brand.scss';			
+
+
+/* CSS Transitions and animations. Use this file to set the animation states for all of your elements*/
+@import '../styles/animations.scss';
