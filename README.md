@@ -5,7 +5,7 @@ Quickly create pharma-specific HTML display ads along with ISI styles and functi
 A console / preview mode is included in this package for testing and demo purposes.
 
 
-### SET UP & CONFIGURATION ###
+## SET UP & CONFIGURATION ##
 
 Clone this repo and run the following commands:
 
