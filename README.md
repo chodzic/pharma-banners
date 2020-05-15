@@ -5,7 +5,7 @@ Quickly create pharma-specific HTML display ads along with ISI styles and functi
 A console / preview mode is included in this package for testing and demo purposes.
 
 
-### SET UP & CONFIGURATION ###
+## SET UP & CONFIGURATION ##
 
 Clone this repo and run the following commands:
 
@@ -25,7 +25,7 @@ npm run build:prod
 This will build a package for release. All HTML, CSS and JS will be minified and injected into the `index.html` file. All image assets will be included in the /assets/ directory.
 
 
-### STEP 1: Preparing the canvas ###
+## STEP 1: Preparing the canvas ##
 
 The first step for building a display ad using this template is to prepare your banner canvas. You do so by adjusting the ad.size meta data tag in the `index.html` file.
 
@@ -36,10 +36,10 @@ The first step for building a display ad using this template is to prepare your 
 Adjust those values to the desired dimensions of your banner. The template will read those dimensions and adjust the size of the banner accordingly. 
 
 
-### STEP 2: Animations ###
+## STEP 2: Animations ##
 
 
-#### Keyframes ####
+### Keyframes ###
 
 A light-weight animation framework is built into this template. This framework listens for keyframes and uses classnames and CSS to target elements.
 
@@ -52,7 +52,7 @@ Animations are encouraged to be handled entirely through CSS transitions. Keyfra
 This specific meta tag contains three keyframes separated by commas. At 4000 milliseconds (or, 4 seconds), the classname 'queue1' will be added to the parent container. At 8 seconds, 'queue2' will be added. At 12 seconds, the final class name, 'queue3', will be added. Using the example above, at the 12 second mark, the parent container will have all three classnames for each keyframe: queue1, queue2 and queue3.
 
 
-#### Create and style animation elements ####
+### Create and style animation elements ###
 
 General banner properties are stored in the `/styles/_variables.scss` file. Is it recommended that you create and store reusable banner variables in this file and then call them throughout your css.
 
@@ -60,7 +60,7 @@ All elements must be stored within the #content element found in the `index.html
 
 
 
-#### Animate elements ####
+### Animate elements ###
 
 The animation methodology for this template is built entirely on CSS transitions. Once the html elements are added to the `index.html` file, and those elements are styled in the `/styles/_brand.scss` file, the elements can then be animated using the keyframe classnames.
 
@@ -79,15 +79,15 @@ Use this structure to animate all elements using the .queue[#] keyframe classes 
 
 
 
-### STEP 3: Configure the ISI (Optional) ###
+## STEP 3: Configure the ISI (Optional) ##
 
 The ISI container and functionality are pre-built into the template. By default, the ISI is built to take up 1/3 of the canvas. To adjust this value, change the $isi-size variable in the `styles/_variables.scss` file.
 
-#### ISI Position ####
+### ISI Position ###
 
 The ISI is dynamically positioned based on the banner's aspect ratio. On load, banners will be dynamically categorized as square, wide or tall. All tall and square banners will have an ISI positioned at the bottom of the canvas. Wide banners will position ads on the right of the canvas.
 
-#### Auto-scroll Functionality ####
+### Auto-scroll Functionality ###
 
 The ISI has pre-built auto-scroll functionality. They are: 
 
@@ -119,33 +119,33 @@ Remove all of these attributes to remove all autoscroll functionality from the b
 
 It's important to note that the ISI will stop scrolling once the user engages with the banner (ie: click text within the ISI, expand the ISI, manual scroll of the ISI).
 
-#### Expand ISI ####
+### Expand ISI ###
 
 The template also has pre-built "expand" functionalilty which expands the ISI to take up 100% of the banner canvas. Once expanded, the ISI can then be collapsed to it's initial state. To include this fucntionality, add *data-isi-expand="show"* to the ISI header element (.header).
 
 
 
-### CONSOLE ###
+## CONSOLE ##
 
 In development and demo mode, the banner will appear within a console. The purpose of this console is to allow developers, QA analysts and project managers to produce, test and route banners more efficiently.
 
-#### Banner Properties ###
+### Banner Properties ###
 
   The banner properties (width, height, keyframes...) are displayed in the console to ensure that the dimensions are correct.
 
-#### ISI Rules ###
+### ISI Rules ###
 
   The ISI rules (autoscroll, speed, hover, etc...) are displayed in the console, allowing QA analysts to ensure these rules are properly set.
 
-#### ClickTags ###
+### ClickTags ###
 
   All clickTags set in the banner are displayed in the console. As you hover over clickable elements within the banner (frames, links, etc...), the clicktags in the console are highlighted, indicating that the clicktable element will take the user to the highlighted clickTag.
 
-#### Timeline ###
+### Timeline ###
 
   All keyframes of the banner are displayed in the timeline. Clicking each of the keyframes display that particular keyframe of the banner. 
 
-#### Actions ###
+### Actions ###
 
   Toggles are built into the console which allow the user to hide and show specific elements from the console.
 
@@ -154,7 +154,7 @@ In development and demo mode, the banner will appear within a console. The purpo
 
 
 
-### Contact ###
+## Contact ##
 
 If you have any questions, or would like to suggest new features or improvements, feel free to reach out to me.
 
