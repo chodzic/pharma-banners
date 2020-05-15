@@ -8,11 +8,26 @@ let isi = document.querySelector('#isi');
 |	Generate HTML for the Action Panel
 */
 
-var isi_actions = isi ? "<div class='action'><label>Show ISI:</label><div class='input off onoff' data-toggleclass='isi-show' data-toggleclasstarget='body'></div></div><div class='action action-isi-fpo'><label>Show ISI FPO Message:</label><div class='input off onoff' data-toggleclass='isi-show-fpo' data-toggleclasstarget='body'></div></div>" : "";
+var isi_actions = isi ? "<div class='action'><label>Show ISI:</label><div class='input off onoff' data-toggleclass='isi-show' data-toggleclasstarget='body'></div></div><div class='action action-isi-fpo'><label>Show ISI FPO Message:</label><div class='input off onoff' data-toggleclass='isi-show-fpo' data-toggleclasstarget='body'></div></div><div class='action'><label>Show AdChoices:</label><div class='input off onoff' data-toggleclass='adchoices-show' data-toggleclasstarget='body'></div></div>" : "";
 
 var debug_panel_actions = "<div class='debug-panel-header'>Actions</div><div class='debug-panel-content action-options'>"+isi_actions+"<div class='note'>Press spacebar to hide console.</div></div>";
 
 panel_right.innerHTML = debug_panel_actions;
+
+
+
+/* Add AdChoices logo to banner */
+var el = document.getElementById('content'),
+    elChild = document.createElement('div');
+elChild.classList.add("adchoices");
+el.appendChild(elChild);
+
+document.querySelector('.adchoices').addEventListener('click', function(e){
+
+	e.target.classList.toggle("on");
+
+});
+
 
 
 var onoff = document.getElementsByClassName('onoff');

@@ -155,3 +155,52 @@ body {
     	}
     }
 }
+
+.adchoices-show  {
+
+
+	.adchoices {
+
+		z-index: 10;
+		position: absolute;
+		width: 19px;
+		height: 15px;
+		right: 0;
+
+
+		&:after {
+
+			content: "";
+			position: absolute;
+			width: 19px;
+			height: 15px;
+			background: url(../adchoices/adchoices.png);
+			top: 0;
+			right: 0;
+			z-index: 5;	
+
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			right: -77px;
+			width: 77px;
+			height: 15px;
+			background: url(../adchoices/adchoices-wide.png);
+			transition: right 150ms linear;
+			z-index: 4;
+		}
+
+		&.on {
+
+			&:before {
+				right: 0;
+
+			}
+
+		}
+
+	}
+
+}
