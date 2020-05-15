@@ -150,7 +150,7 @@ In development and demo mode, the banner will appear within a console. The purpo
   Toggles are built into the console which allow the user to hide and show specific elements from the console.
 
   * SHOW ISI - Expands the ISI and repositions it below the banner.
-  * BACKGROUND PATTERN - Hide/show the background pattern of the canvas.
+  * ADCHOICES - Displays the AdChoices logo in the top corner of the banner.
 
 
 
