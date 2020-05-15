@@ -44,11 +44,46 @@
           }
       }
 
+      &:after {
+        content: "EXPAND";
+        position: absolute;
+        right: 17px;
+      }
+
     }
 
   }
 
 }
+
+
+
+.isi-expand {
+
+  #legal {
+
+    .header {
+
+      .expand {
+
+        &:after {
+
+          content: "COLLAPSE";
+        
+        }
+      
+      }
+
+
+    }
+
+  }
+
+}
+
+
+
+
 
 
 /* 

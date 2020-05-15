@@ -80,6 +80,12 @@
 
 				}
 
+				&:after {
+
+					/* Adjust the content property to change the expand label. Default: EXPAND */
+
+				}
+
 			}
 		}
 
@@ -163,5 +169,29 @@
 
 		}
 	}
+
+}
+
+
+
+.isi-expand {
+
+  #legal {
+
+    .header {
+
+      .expand {
+
+        &:after {
+
+          /* Adjust the content property to change the expand label. Default: COLLAPSE */
+        
+        }
+      
+      }
+
+    }
+
+  }
 
 }
