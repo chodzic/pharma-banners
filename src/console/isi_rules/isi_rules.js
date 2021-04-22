@@ -39,12 +39,21 @@ var prop_array = [
 var prop_html = "<div class='debug-panel-header'>ISI RULES</div><div class='debug-panel-content col-2'>";
 
 for(i=0; i<prop_array.length;i++) {
+	
 	if (prop_array[i][2]) {
 		muted_text = "<span class='muted'>"+prop_array[i][2]+"</span>";
 	} else {
 		muted_text = "";
 	}
+	
 	prop_html += "<div class='prop'><label>"+prop_array[i][0]+":</label><div class='val'>"+prop_array[i][1]+" "+muted_text+"</div></div>";
+
+	/* If autoscroll is FALSE, then doesn't display rest of rules */
+
+	if (prop_array[0][1] == "FALSE") {
+		break;
+	} 
+
 }
 
 prop_html += "</div>";

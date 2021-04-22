@@ -4,7 +4,8 @@
   "description": "Pharma banner template with custom scrolling ISI.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist/* && webpack --config webpack.demo.js",
+    "build:prod": "rm -rf ./dist && webpack --config webpack.prod.js && rm ./dist/main.css && rm ./dist/main.js",
+    "build:demo": "webpack --config webpack.demo.js",
     "start": "webpack-dev-server --config webpack.dev.js"
   },
   "keywords": [
@@ -28,7 +29,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {

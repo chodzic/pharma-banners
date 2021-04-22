@@ -1,3 +1,11 @@
+/* TODO: Add the following properties:
+|  
+|  Assets:
+|  Weight:
+|
+*/
+
+
 let panel_left = document.querySelector('.panel-left');
 
 /* 
